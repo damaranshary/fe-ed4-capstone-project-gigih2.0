@@ -1,8 +1,5 @@
 const Watch = () => {
-    return (
-        <p>this is Watch</p>
-    )
-
-}
+  return <p>this is Watch</p>;
+};
 
 export default Watch;

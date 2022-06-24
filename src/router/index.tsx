@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../component/navbar";
 import Home from "../pages/home";
-import Quiz from "../pages/quiz";
-import Watch from "../pages/watch";
 import Read from "../pages/read";
 import Learn from "../pages/learn";
+import Quiz from "../pages/quiz";
+import Watch from "../pages/watch";
 import Legends from "../component/legends";
 import FunFact from "../component/funFact"
 import BookDescription from "../component/books/description";
@@ -25,9 +25,7 @@ const AppRouter = () => {
                                 <Route index element={<BookDescription />} />
                                 <Route path=":pages" element={<Legends />}/>
                             </Route>
-
                         </Route>
-
                         <Route path="fun-fact" element={<FunFact />} />
                     </Route>
                     <Route path="quiz" element={<Quiz />} />
