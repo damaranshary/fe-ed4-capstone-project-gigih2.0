@@ -8,7 +8,7 @@ import Watch from "../pages/watch";
 import Legends from "../component/legends";
 import FunFact from "../component/funFact"
 import BookDescription from "../component/books/description";
-
+import Vocab from "../pages/vocab";
 
 const AppRouter = () => {
     return (
@@ -30,7 +30,7 @@ const AppRouter = () => {
                     </Route>
                     <Route path="quiz" element={<Quiz />} />
                     <Route path="watch" element={<Watch />} />
-                    <Route path="learn" element={<Learn />} />
+                    <Route path="learn" element={<Vocab />} />
                 </Route>
             </Routes>
         </Router>

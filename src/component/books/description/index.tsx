@@ -8,6 +8,7 @@ import {
     Image,
     Link,
     Stack,
+    VStack,
     Text,
     useColorModeValue, } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
@@ -24,7 +25,7 @@ const BookDescription = () => {
                 <Stack
                     borderWidth="1px"
                     borderRadius="lg"
-                    w={{ sm: '100%', md: '1280px' }}
+                    w={{ sm: '100%', md: '1200px' }}
                     height={{ sm: '100%', md: 'full' }}
                     direction={{ base: 'column', md: 'row' }}
                     bg={useColorModeValue('white', 'gray.900')}
@@ -45,7 +46,7 @@ const BookDescription = () => {
                         p={1}
                         pt={2}>
                         <Heading fontSize={'2xl'} fontFamily={'body'}>
-                            {legendsData[0].name}
+                            {bookName}
                         </Heading>
                         <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
                             @author
