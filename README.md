@@ -8,10 +8,10 @@ Here is the Contributor for this Project:
 
 # Baca Merdeka Features:
 
-### `Read many interesting Books for Children below 9 years old`
-### `Daily Vocabulary`
-### `Video`
-### `Quiz`
+### Read many interesting Books for Children below 9 years old
+### Daily Vocabulary
+### Video
+### Quiz
 
 # Script you can use for this project
 
