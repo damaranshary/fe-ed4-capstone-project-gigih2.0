@@ -9,6 +9,7 @@ import Legends from "../component/legends";
 import FunFact from "../component/funFact"
 import BookDescription from "../component/books/description";
 import Vocab from "../pages/vocab";
+import BookContent from "../component/books/content";
 
 const AppRouter = () => {
     return (
@@ -23,7 +24,7 @@ const AppRouter = () => {
                             <Route index element={<Legends />} />
                             <Route path=":id">
                                 <Route index element={<BookDescription />} />
-                                <Route path=":pages" element={<Legends />}/>
+                                <Route path=":pagesNumber" element={<BookContent />}/>
                             </Route>
                         </Route>
                         <Route path="fun-fact" element={<FunFact />} />

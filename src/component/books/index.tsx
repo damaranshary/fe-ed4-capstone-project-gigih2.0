@@ -6,8 +6,11 @@ import {
     Badge,
     Icon,
     chakra,
+    Button,
+    Center,
     Tooltip,
-    Link
+    Link,
+    Heading
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { FiShoppingCart } from 'react-icons/fi';
@@ -15,53 +18,57 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { BooksDataProps } from '../../types/types';
 
 const Books = ({ isNew, imageURL, name, id, category }: BooksDataProps) => {
-    const bookNameWithLowerCase = name.toLowerCase();
-    const link = '/read/' + category + '/' + bookNameWithLowerCase?.replaceAll(' ', '-');
+    const linkToDescription = '/read/' + category + '/' + id;
     return (
-        <Flex p={2} w="300px" alignItems="center" justifyContent="center">
+        <Flex p={2} w="400px" alignItems="center" justifyContent="center" mt={8}>
             <Box
                 maxW="xl"
                 borderWidth="1px"
                 rounded="lg"
                 shadow="lg"
                 position="relative">
-                {isNew && (
-                    <Circle
-                        size="10px"
-                        position="absolute"
-                        top={2}
-                        right={2}
-                        bg="red.200"
-                    />
-                )}
-
                 <Image
-                    src={imageURL}
+                    src={imageURL.cover}
                     alt={`Picture of ${name}`}
                     roundedTop="lg"
                 />
 
                 <Box p="6">
-                    <Flex mt="1" justifyContent="space-between" alignContent="center">
-                        <Box
-                            fontSize="xl"
-                            fontWeight="semibold"
-                            as="h4"
-                            lineHeight="tight"
-                        >
-                            <Link as={ReactRouterLink} to={link}>{name}</Link>
-                        </Box>
-                        <Tooltip
-                            label="Add to cart"
-                            bg="white"
-                            placement={'top'}
-                            color={'gray.800'}
-                            fontSize={'1.2em'}>
-                            <chakra.a href={'#'} display={'flex'}>
-                                <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
-                            </chakra.a>
-                        </Tooltip>
-                    </Flex>
+                    <Center w='full'>
+                        <Flex mt="1" justifyContent="space-between" flexDirection="column" alignContent="center">
+                            <Box
+                                fontSize="xl"
+                                fontWeight="semibold"
+                                as="h4"
+                                lineHeight="tight"
+                            >
+                                <Heading as='h3' size='md'>{name}</Heading>
+                            </Box>
+                            <Link as={ReactRouterLink} to={linkToDescription}>
+                                <Button
+                                    mt="4"
+                                    flex={1}
+                                    fontSize={'sm'}
+                                    rounded={'full'}
+                                    bg={'blue.400'}
+                                    color={'white'}
+                                    size='lg'
+                                    w='300px'
+                                    boxShadow={
+                                        '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+                                    }
+                                    _hover={{
+                                        bg: 'blue.500',
+                                    }}
+                                    _focus={{
+                                        bg: 'blue.500',
+                                    }}>
+                                    Read
+                                </Button>
+                            </Link>
+
+                        </Flex>
+                    </Center>
 
                 </Box>
             </Box>
