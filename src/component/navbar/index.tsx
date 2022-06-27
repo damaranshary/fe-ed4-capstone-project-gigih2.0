@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -19,6 +19,10 @@ function Navbar() {
     }
   };
 
+  useEffect(() => {
+    showButton();
+  }, []);
+
   window.addEventListener("resize", showButton);
 
   return (
@@ -26,7 +30,7 @@ function Navbar() {
       <Box>
         <div className="navbar">
           <div className="navbar-container container">
-            <Link to="/" className="navbar-logo">
+            <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
               Baca Merdeka
             </Link>
 
@@ -36,27 +40,27 @@ function Navbar() {
 
             <ul className={click ? "nav-menu active" : "nav-menu"}>
               <li className="nav-item">
-                <Link to="/" className="nav-links">
+                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/read" className="nav-links">
+                <Link to="/read" className="nav-links" onClick={closeMobileMenu}>
                   Read
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/learn" className="nav-links">
+                <Link to="/learn" className="nav-links" onClick={closeMobileMenu}>
                   Learn
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/watch" className="nav-links">
+                <Link to="/watch" className="nav-links" onClick={closeMobileMenu}>
                   Watch
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/quiz" className="nav-links">
+                <Link to="/quiz" className="nav-links" onClick={closeMobileMenu}>
                   Quiz
                 </Link>
               </li>
