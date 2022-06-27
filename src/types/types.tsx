@@ -1,12 +1,12 @@
 export interface BooksDataProps  {
-    isNew: boolean,
-    imageURL: imageURL,
-    name: any,
+    coverImageURL: string,
+    content: content[],
+    name: string,
     id: string,
     category: string
 }
 
-export type imageURL = {
-    cover: string,
-    content: string[],
+export type content = {
+    imageURL: string,
+    description: string,
 }
