@@ -17,10 +17,9 @@ import { FiShoppingCart } from 'react-icons/fi';
 
 import { BooksDataProps } from '../../types/types';
 
-const Books = ({ isNew, imageURL, name, id, category }: BooksDataProps) => {
-    const linkToDescription = '/read/' + category + '/' + id;
+const Books = ({ coverImageURL, name, id, category }: BooksDataProps) => {
     return (
-        <Flex p={2} w="400px" alignItems="center" justifyContent="center" mt={8}>
+        <Flex p={2} maxW="6xl" alignItems="center" justifyContent="center" mt={8}>
             <Box
                 maxW="xl"
                 borderWidth="1px"
@@ -28,7 +27,7 @@ const Books = ({ isNew, imageURL, name, id, category }: BooksDataProps) => {
                 shadow="lg"
                 position="relative">
                 <Image
-                    src={imageURL.cover}
+                    src={coverImageURL}
                     alt={`Picture of ${name}`}
                     roundedTop="lg"
                 />
@@ -44,7 +43,7 @@ const Books = ({ isNew, imageURL, name, id, category }: BooksDataProps) => {
                             >
                                 <Heading as='h3' size='md'>{name}</Heading>
                             </Box>
-                            <Link as={ReactRouterLink} to={linkToDescription}>
+                            <Link as={ReactRouterLink} to={`/read/${category}/${id}`}>
                                 <Button
                                     mt="4"
                                     flex={1}

@@ -1,26 +1,24 @@
-import { Container, Grid, GridItem, Heading, Link } from "@chakra-ui/react";
+import { Container, SimpleGrid, Heading, Link, Box } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import Books from '../books';
 import legendsData from '../../data/legends'
 
 const Legends = () => {
     return (
-        <Container maxW='xl' centerContent>
+        <Container maxW='6xl' centerContent>
             <Link as={ReactRouterLink} to='/read/legends'><Heading>Legends</Heading></Link>
-            <Grid templateColumns='repeat(4, 1fr)' gap={1}>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="1">
                 {legendsData !== undefined && legendsData.map((item) => {
                     return (
-                        <GridItem w='100%'>
-                            <Books
-                                isNew={item.isNew}
-                                imageURL={item.imageURL}
-                                name={item.name}
-                                id={item.id} 
-                                category={item.category}/>
-                        </GridItem>
+                        <Books
+                            coverImageURL={item.coverImageURL}
+                            content={item.content}
+                            name={item.name}
+                            id={item.id}
+                            category={item.category} />
                     )
                 })}
-            </Grid>
+            </SimpleGrid>
 
         </Container>
 
