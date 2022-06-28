@@ -1,11 +1,15 @@
-import { Button, Container, Center, Image, Box, IconButton, useBreakpointValue, Text } from '@chakra-ui/react';
-import { useState } from 'react';
+import { Button, Container, Center, Image, Box, IconButton, useBreakpointValue, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import { Link as ReactRouterLink } from 'react-router-dom'
 import legendsData from '../../../data/legends';
-
+import axios from 'axios';
+import { BooksDataProps } from '../../../types/types';
+import { BreadcrumbForLegendsContent } from '../../breadcrumb'
 
 
 const BookContent = () => {
@@ -20,6 +24,21 @@ const BookContent = () => {
         slidesToScroll: 1,
     };
     const [slider, setSlider] = useState<Slider | null>(null);
+    const params = useParams();
+    const bookID = params?.id;
+    const [data, setData] = useState<BooksDataProps>();
+
+    useEffect(() => {
+        getBookContentFromID().then((res) => setData(res));
+    }, [])
+
+    const getBookContentFromID = async (): Promise<BooksDataProps> => {
+        const data: any =
+            await axios
+                .get(`/data/${bookID}.json`)
+                .catch(err => console.log(err));
+        return data.data;
+    }
 
     // These are the breakpoints which changes the position of the
     // buttons as the screen size changes
@@ -27,7 +46,17 @@ const BookContent = () => {
     const side = useBreakpointValue({ base: '30%', md: '10px' });
 
     return (
-        <Center mt={10}>
+        <>
+            <Center>
+                {data !== undefined && data.category == 'legends' &&
+                    <BreadcrumbForLegendsContent
+                        currentPage={data.name} />}
+                {data !== undefined && data.category == 'fun fact' &&
+                    <BreadcrumbForLegendsContent
+                        currentPage={data.name} />}
+            </Center>
+            <Center mt={10}>
+
                 <Box
                     position={'relative'}
                     height={'full'}
@@ -73,17 +102,19 @@ const BookContent = () => {
                     </IconButton>
                     {/* Slider */}
                     <Slider {...settings} ref={(slider) => setSlider(slider)}>
-                        {legendsData[0].content.map(({imageURL, description}, index) => (
+                        {data?.content.map(({ imageURL, description }, index) => (
                             <>
-                                <Image src={imageURL} alt={imageURL} />
-                                {index}
-                                <p>{description}</p>
+                                <Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' />
+                                <Center>
+                                    <Text fontSize='xl'>{description}</Text>
+                                </Center>
                             </>
                         ))}
 
                     </Slider>
                 </Box>
-        </Center>
+            </Center>
+        </>
     );
 
 }
