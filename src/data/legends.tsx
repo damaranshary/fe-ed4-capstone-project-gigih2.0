@@ -66,7 +66,7 @@ const legendsData = [
                 }
             ],
         name: 'Pergi Ke Pasar',
-        id: "legends001",
+        id: "B001",
         category: "legends",
     },
     {

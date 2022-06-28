@@ -74,6 +74,7 @@ const funFactData = [
         name: 'Pergi Ke Pasar',
         id: "legends001",
         category: "legends",
+        description: "lalaalalal"
     }
 ];
 
