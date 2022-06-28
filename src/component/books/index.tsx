@@ -10,14 +10,16 @@ import {
     Center,
     Tooltip,
     Link,
-    Heading
+    Heading,
+    Text
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { FiShoppingCart } from 'react-icons/fi';
 
 import { BooksDataProps } from '../../types/types';
 
-const Books = ({ coverImageURL, name, id, category }: BooksDataProps) => {
+const Books = ({ coverImageURL, name, id, category, description }: BooksDataProps) => {
+    const linkToDescription = `/read/${category}/${id}`
     return (
         <Flex p={2} maxW="6xl" alignItems="center" justifyContent="center" mt={8}>
             <Box
@@ -31,7 +33,6 @@ const Books = ({ coverImageURL, name, id, category }: BooksDataProps) => {
                     alt={`Picture of ${name}`}
                     roundedTop="lg"
                 />
-
                 <Box p="6">
                     <Center w='full'>
                         <Flex mt="1" justifyContent="space-between" flexDirection="column" alignContent="center">
@@ -42,8 +43,9 @@ const Books = ({ coverImageURL, name, id, category }: BooksDataProps) => {
                                 lineHeight="tight"
                             >
                                 <Heading as='h3' size='md'>{name}</Heading>
+                                <Text fontSize='xs' mt={2}>{description}</Text>
                             </Box>
-                            <Link as={ReactRouterLink} to={`/read/${category}/${id}`}>
+                            <Link as={ReactRouterLink} to={linkToDescription}>
                                 <Button
                                     mt="4"
                                     flex={1}

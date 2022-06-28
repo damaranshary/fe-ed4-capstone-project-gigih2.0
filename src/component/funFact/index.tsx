@@ -15,7 +15,8 @@ const FunFact = () => {
                             content={item.content}
                             name={item.name}
                             id={item.id}
-                            category={item.category} />
+                            category={item.category}
+                            description={item.description} />
                     )
                 })}
             </SimpleGrid>

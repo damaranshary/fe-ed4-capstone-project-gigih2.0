@@ -7,7 +7,6 @@ import Quiz from "../pages/quiz";
 import Watch from "../pages/watch";
 import Legends from "../component/legends";
 import FunFact from "../component/funFact"
-import BookDescription from "../component/books/description";
 import Vocab from "../pages/vocab";
 import BookContent from "../component/books/content";
 
@@ -22,10 +21,7 @@ const AppRouter = () => {
                         <Route index element={<Read />} />
                         <Route path="legends">
                             <Route index element={<Legends />} />
-                            <Route path=":id">
-                                <Route index element={<BookDescription />} />
-                                <Route path=":pagesNumber" element={<BookContent />}/>
-                            </Route>
+                            <Route path=":id" element={<BookContent />} />
                         </Route>
                         <Route path="fun-fact" element={<FunFact />} />
                     </Route>
