@@ -1,14 +1,32 @@
 import { Container, SimpleGrid, Heading, Link, Box } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from 'react-router-dom'
+import { useEffect } from 'react'
 import Books from '../books';
-import funFactData from '../../data/fun-fact'
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { RootState } from "../../redux/store";
+import { setFunFactsData } from "../../redux/slices/funFactDataSlice";
+import { fetcherBooksData } from "../../api-call/fetchBooksData";
 
-const FunFact = () => {
+const FunFactComponent = () => {
+    const funFactBook = ['/data/B004.json']
+    const funFactsData = useAppSelector((state: RootState) => state.funFactData.value)
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        setFunFactsDataToState()
+    }, [])
+
+    const setFunFactsDataToState = async () => {
+        Promise.all(fetcherBooksData(funFactBook)).then((item) => {
+            dispatch(setFunFactsData(item));
+        })
+    }
+
     return (
         <Container maxW='6xl' centerContent>
             <Link as={ReactRouterLink} to='/read/fun-fact'><Heading>Fun Fact</Heading></Link>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="6">
-                {funFactData !== undefined && funFactData.map((item) => {
+                {funFactsData !== undefined && funFactsData.map((item) => {
                     return (
                         <Books
                             coverImageURL={item.coverImageURL}
@@ -16,7 +34,8 @@ const FunFact = () => {
                             name={item.name}
                             id={item.id}
                             category={item.category}
-                            description={item.description} />
+                            description={item.description}
+                            author={item.author} />
                     )
                 })}
             </SimpleGrid>
@@ -26,4 +45,4 @@ const FunFact = () => {
     )
 }
 
-export default FunFact;
+export default FunFactComponent;

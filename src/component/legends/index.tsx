@@ -1,28 +1,33 @@
 import { Container, SimpleGrid, Heading, Link, Box } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import Books from '../books';
-import legendsData from '../../data/legends'
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BooksDataProps } from "../../types/types";
 
-const Legends = () => {
+const LegendsComponent = () => {
     const legendsBook = ['/data/B001.json', '/data/B002.json', '/data/B003.json']
     const [legendsData, setLegendsData] = useState<BooksDataProps[]>([]);
 
     useEffect(() => {
-        legendsBook.map((item) => {
-            fetchLegendsData(item).then(res => setLegendsData([...legendsData, res]));
-            console.log(item);
-        })
+        setLegendsDataToState();
     }, [])
 
+    const setLegendsDataToState = async () => {
+        Promise.all(fetcher).then((item) => {
+            setLegendsData(item);
+        })
+    }
+
     const fetchLegendsData = async (pathURL: string): Promise<BooksDataProps> => {
-        const data: any = await axios
-            .get(pathURL)
-            .catch(err => console.log(err));
+        const data: any =
+            await axios
+                .get(pathURL)
+                .catch(err => console.log(err));
         return data.data;
     }
+
+    const fetcher = legendsBook.map(book => fetchLegendsData(book))
 
     return (
         <Container maxW='6xl' centerContent>
@@ -36,6 +41,7 @@ const Legends = () => {
                         description={item.description}
                         category={item.category}
                         content={item.content}
+                        author={item.author}
                     />
                 )}
             </SimpleGrid>
@@ -45,4 +51,4 @@ const Legends = () => {
     )
 }
 
-export default Legends;
+export default LegendsComponent;
