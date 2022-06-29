@@ -23,11 +23,15 @@ const AppRouter = () => {
                             <Route index element={<Legends />} />
                             <Route path=":id" element={<BookContent />} />
                         </Route>
-                        <Route path="fun-fact" element={<FunFact />} />
+                        <Route path="fun-fact">
+                            <Route index element={<FunFact />} />
+                            <Route path=":id" element={<BookContent />} />
+                        </Route>
                     </Route>
                     <Route path="quiz" element={<Quiz />} />
                     <Route path="watch" element={<Watch />} />
                     <Route path="learn" element={<Vocab />} />
+                    <Route path="*" element={<div>nothing here code:404</div>}></Route>
                 </Route>
             </Routes>
         </Router>

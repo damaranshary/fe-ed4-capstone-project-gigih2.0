@@ -5,6 +5,7 @@ export interface BooksDataProps  {
     id: string,
     category: string,
     description: string,
+    author: string
 }
 
 export type content = {

@@ -1,12 +1,11 @@
-import FunFact from '../../component/funFact';
-import Legends from '../../component/legends'
+import FunFactComponent from '../../component/funFact';
+import LegendsComponent from '../../component/legends'
 
 const Read = () => {
     return (
         <div>
-            <p>this is Read</p>
-            <Legends />
-            <FunFact />
+            <LegendsComponent />
+            <FunFactComponent />
         </div>
     )
 }

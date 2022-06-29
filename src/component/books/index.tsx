@@ -1,25 +1,20 @@
 import {
     Flex,
-    Circle,
     Box,
     Image,
-    Badge,
-    Icon,
-    chakra,
     Button,
     Center,
-    Tooltip,
     Link,
     Heading,
     Text
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom'
-import { FiShoppingCart } from 'react-icons/fi';
 
 import { BooksDataProps } from '../../types/types';
 
-const Books = ({ coverImageURL, name, id, category, description }: BooksDataProps) => {
-    const linkToDescription = `/read/${category}/${id}`
+const Books = ({ coverImageURL, name, id, category, description, author }: BooksDataProps) => {
+    const categoryWithSlug = category.replaceAll(" ", "-")
+    const linkToDescription = `/read/${categoryWithSlug}/${id}`
     return (
         <Flex p={2} maxW="6xl" alignItems="center" justifyContent="center" mt={8}>
             <Box
@@ -42,31 +37,34 @@ const Books = ({ coverImageURL, name, id, category, description }: BooksDataProp
                                 as="h4"
                                 lineHeight="tight"
                             >
-                                <Heading as='h3' size='md'>{name}</Heading>
+                                <Heading size='md'>{name}</Heading>
+                                <Text color='gray.500' fontSize='sm' mt={1}>{author}</Text>
                                 <Text fontSize='xs' mt={2}>{description}</Text>
                             </Box>
-                            <Link as={ReactRouterLink} to={linkToDescription}>
-                                <Button
-                                    mt="4"
-                                    flex={1}
-                                    fontSize={'sm'}
-                                    rounded={'full'}
-                                    bg={'blue.400'}
-                                    color={'white'}
-                                    size='lg'
-                                    w='300px'
-                                    boxShadow={
-                                        '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-                                    }
-                                    _hover={{
-                                        bg: 'blue.500',
-                                    }}
-                                    _focus={{
-                                        bg: 'blue.500',
-                                    }}>
-                                    Read
-                                </Button>
-                            </Link>
+                            <Center>
+                                <Link as={ReactRouterLink} to={linkToDescription}>
+                                    <Button
+                                        mt="4"
+                                        flex={1}
+                                        fontSize={'sm'}
+                                        rounded={'full'}
+                                        bg={'blue.400'}
+                                        color={'white'}
+                                        size='lg'
+                                        w='300px'
+                                        boxShadow={
+                                            '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+                                        }
+                                        _hover={{
+                                            bg: 'blue.500',
+                                        }}
+                                        _focus={{
+                                            bg: 'blue.500',
+                                        }}>
+                                        Read
+                                    </Button>
+                                </Link>
+                            </Center>
 
                         </Flex>
                     </Center>

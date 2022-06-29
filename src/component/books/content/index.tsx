@@ -1,4 +1,4 @@
-import { Button, Container, Center, Image, Box, IconButton, useBreakpointValue, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import { Button, Container, Center, Image, Box, IconButton, useBreakpointValue, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
@@ -9,7 +9,7 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 import legendsData from '../../../data/legends';
 import axios from 'axios';
 import { BooksDataProps } from '../../../types/types';
-import { BreadcrumbForLegendsContent } from '../../breadcrumb'
+import { BreadcrumbForLegendsContent, BreadcrumbForFunFactContent } from '../../breadcrumb'
 
 
 const BookContent = () => {
@@ -52,67 +52,73 @@ const BookContent = () => {
                     <BreadcrumbForLegendsContent
                         currentPage={data.name} />}
                 {data !== undefined && data.category == 'fun fact' &&
-                    <BreadcrumbForLegendsContent
+                    <BreadcrumbForFunFactContent
                         currentPage={data.name} />}
+
             </Center>
-            <Center mt={10}>
+            <Center mt={8}>
+                <Stack direction='column' >
+                    <Center >
+                        <Text fontSize='3xl' as='h2' mb={5}>{data?.name}</Text>
+                    </Center>
+                    <Box
+                        position={'relative'}
+                        height={'full'}
+                        width={'800px'}
+                        overflow={'hidden'}>
+                        {/* CSS files for react-slick */}
+                        <link
+                            rel="stylesheet"
+                            type="text/css"
+                            charSet="UTF-8"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+                        />
+                        <link
+                            rel="stylesheet"
+                            type="text/css"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+                        />
+                        {/* Left Icon */}
+                        <IconButton
+                            aria-label="left-arrow"
+                            colorScheme="messenger"
+                            borderRadius="full"
+                            position="absolute"
+                            left={side}
+                            top={top}
+                            transform={'translate(0%, -50%)'}
+                            zIndex={2}
+                            onClick={() => slider?.slickPrev()}>
+                            <BiLeftArrowAlt />
+                        </IconButton>
+                        {/* Right Icon */}
+                        <IconButton
+                            aria-label="right-arrow"
+                            colorScheme="messenger"
+                            borderRadius="full"
+                            position="absolute"
+                            right={side}
+                            top={top}
+                            transform={'translate(0%, -50%)'}
+                            zIndex={2}
+                            onClick={() => slider?.slickNext()}>
+                            <BiRightArrowAlt />
+                        </IconButton>
+                        {/* Slider */}
+                        <Slider {...settings} ref={(slider) => setSlider(slider)}>
+                            {data?.content.map(({ imageURL, description }, index) => (
+                                <>
+                                    <Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' />
+                                    <Stack direction='column'>
+                                            <Text fontSize='sm'>Halaman {index + 1} dari {data?.content.length}</Text>
+                                            <Text fontSize='xl'>{description}</Text>
+                                    </Stack>
+                                </>
+                            ))}
 
-                <Box
-                    position={'relative'}
-                    height={'full'}
-                    width={'800px'}
-                    overflow={'hidden'}>
-                    {/* CSS files for react-slick */}
-                    <link
-                        rel="stylesheet"
-                        type="text/css"
-                        charSet="UTF-8"
-                        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-                    />
-                    <link
-                        rel="stylesheet"
-                        type="text/css"
-                        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-                    />
-                    {/* Left Icon */}
-                    <IconButton
-                        aria-label="left-arrow"
-                        colorScheme="messenger"
-                        borderRadius="full"
-                        position="absolute"
-                        left={side}
-                        top={top}
-                        transform={'translate(0%, -50%)'}
-                        zIndex={2}
-                        onClick={() => slider?.slickPrev()}>
-                        <BiLeftArrowAlt />
-                    </IconButton>
-                    {/* Right Icon */}
-                    <IconButton
-                        aria-label="right-arrow"
-                        colorScheme="messenger"
-                        borderRadius="full"
-                        position="absolute"
-                        right={side}
-                        top={top}
-                        transform={'translate(0%, -50%)'}
-                        zIndex={2}
-                        onClick={() => slider?.slickNext()}>
-                        <BiRightArrowAlt />
-                    </IconButton>
-                    {/* Slider */}
-                    <Slider {...settings} ref={(slider) => setSlider(slider)}>
-                        {data?.content.map(({ imageURL, description }, index) => (
-                            <>
-                                <Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' />
-                                <Center>
-                                    <Text fontSize='xl'>{description}</Text>
-                                </Center>
-                            </>
-                        ))}
-
-                    </Slider>
-                </Box>
+                        </Slider>
+                    </Box>
+                </Stack>
             </Center>
         </>
     );
