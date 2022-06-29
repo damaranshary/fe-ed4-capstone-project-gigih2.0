@@ -4,6 +4,7 @@ import { homeObjOne, homeObjThree, homeObjTwo } from "./Data";
 import { Box, IconButton, useBreakpointValue, Stack, Heading, Text, Container } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
+import Footer from "../../component/footer";
 
 const settings = {
   dots: true,
@@ -32,7 +33,7 @@ export default function Home() {
     {
       title: "Design Projects 2",
       text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image: "images/moon-cap.png",
+      image: "images/cahaya-bulan.jpg",
     },
     {
       title: "Design Projects 3",
@@ -43,7 +44,7 @@ export default function Home() {
 
   return (
     <>
-      <Box position={"relative"} height={"600px"} width={"full"} overflow={"hidden"}>
+      <Box position={"relative"} height={"700px"} width={"full"} overflow={"hidden"}>
         <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 
@@ -58,7 +59,7 @@ export default function Home() {
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {cards.map((card, index) => (
             <Box key={index} height={"6xl"} position="relative" backgroundPosition="center" backgroundRepeat="no-repeat" backgroundSize="cover" backgroundImage={`url(${card.image})`}>
-              <Container size="container.lg" height="500px" position="relative">
+              <Container size="container.lg" height="700px" position="relative">
                 <Stack spacing={6} w={"full"} maxW={"lg"} position="absolute" top="50%" transform="translate(0, -50%)">
                   <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>{card.title}</Heading>
                   <Text fontSize={{ base: "md", lg: "lg" }} color="GrayText">
@@ -73,6 +74,7 @@ export default function Home() {
       <HeroSection {...homeObjOne} />
       <HeroSection {...homeObjTwo} />
       <HeroSection {...homeObjThree} />
+      <Footer />
     </>
   );
 }
