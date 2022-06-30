@@ -9,7 +9,9 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 import legendsData from '../../../data/legends';
 import axios from 'axios';
 import { BooksDataProps } from '../../../types/types';
-import { BreadcrumbForLegendsContent, BreadcrumbForFunFactContent } from '../../breadcrumb'
+import { BreadcrumbForLegendsContent, BreadcrumbForFunFactContent } from '../../breadcrumb';
+import { useAppSelector } from '../../../redux/hooks';
+import { RootState } from '../../../redux/store';
 
 
 const BookContent = () => {
@@ -26,18 +28,26 @@ const BookContent = () => {
     const [slider, setSlider] = useState<Slider | null>(null);
     const params = useParams();
     const bookID = params?.id;
-    const [data, setData] = useState<BooksDataProps>();
+    const [contentData, setContentData] = useState<BooksDataProps>();
+    const funFactsData = useAppSelector((state: RootState) => state.funFactData.value);
+    const legendsData = useAppSelector((state: RootState) => state.legendsData.value);
+    const mergedData = funFactsData.concat(legendsData);
 
     useEffect(() => {
-        getBookContentFromID().then((res) => setData(res));
+        getBookContentFromID();
     }, [])
 
-    const getBookContentFromID = async (): Promise<BooksDataProps> => {
+    const fetchBookContentFromID = async (): Promise<BooksDataProps> => { //will run this if there is no data in redux state
         const data: any =
             await axios
                 .get(`/data/${bookID}.json`)
                 .catch(err => console.log(err));
         return data.data;
+    }
+
+    const getBookContentFromID = () => {
+        const filteredContentData = mergedData.filter(content => content.id === bookID);
+        filteredContentData !== undefined ? setContentData(filteredContentData[0]) : fetchBookContentFromID().then(res => setContentData(res)) ;
     }
 
     // These are the breakpoints which changes the position of the
@@ -48,18 +58,17 @@ const BookContent = () => {
     return (
         <>
             <Center>
-                {data !== undefined && data.category == 'legends' &&
+                {contentData !== undefined && contentData.category == 'legends' &&
                     <BreadcrumbForLegendsContent
-                        currentPage={data.name} />}
-                {data !== undefined && data.category == 'fun fact' &&
+                        currentPage={contentData.name} />}
+                {contentData!== undefined && contentData.category == 'fun fact' &&
                     <BreadcrumbForFunFactContent
-                        currentPage={data.name} />}
-
+                        currentPage={contentData.name} />}
             </Center>
             <Center mt={8}>
                 <Stack direction='column' >
                     <Center >
-                        <Text fontSize='3xl' as='h2' mb={5}>{data?.name}</Text>
+                        <Text fontSize='3xl' as='h2' mb={5}>{contentData?.name}</Text>
                     </Center>
                     <Box
                         position={'relative'}
@@ -106,12 +115,12 @@ const BookContent = () => {
                         </IconButton>
                         {/* Slider */}
                         <Slider {...settings} ref={(slider) => setSlider(slider)}>
-                            {data?.content.map(({ imageURL, description }, index) => (
+                            {contentData?.content.map(({ imageURL, description }, index) => (
                                 <>
                                     <Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' />
                                     <Stack direction='column'>
-                                            <Text fontSize='sm'>Halaman {index + 1} dari {data?.content.length}</Text>
-                                            <Text fontSize='xl'>{description}</Text>
+                                        <Text fontSize='sm'>Halaman {index + 1} dari {contentData?.content.length}</Text>
+                                        <Text fontSize='xl'>{description}</Text>
                                     </Stack>
                                 </>
                             ))}

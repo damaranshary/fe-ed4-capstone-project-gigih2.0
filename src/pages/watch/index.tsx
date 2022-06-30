@@ -1,5 +1,10 @@
+import { AspectRatio, Center, Container } from "@chakra-ui/react"
+import WatchComponent from '../../component/watch'
+
 const Watch = () => {
-  return <p>this is Watch</p>;
-};
+    return (
+        <WatchComponent />
+    )
+}
 
 export default Watch;

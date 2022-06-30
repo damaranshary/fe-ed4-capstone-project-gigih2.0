@@ -5,7 +5,7 @@ import Books from '../books';
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import { setFunFactsData } from "../../redux/slices/funFactDataSlice";
-import { fetcherBooksData } from "../../api-call/fetchBooksData";
+import { fetcherBooksData } from "../../api-call/fetchJSONData";
 
 const FunFactComponent = () => {
     const funFactBook = ['/data/B004.json']
@@ -13,7 +13,7 @@ const FunFactComponent = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        setFunFactsDataToState()
+        funFactsData !== undefined && setFunFactsDataToState();
     }, [])
 
     const setFunFactsDataToState = async () => {
