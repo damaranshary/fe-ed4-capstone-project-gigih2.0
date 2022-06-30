@@ -29,7 +29,7 @@ export default function Home() {
   const cards = [
     {
       title: "Kepiting untuk makan malam",
-      text: "Kepiting bakau banyak dijumpai di berbagai hutan bakau. Kepiting memiliki sepasang lengan sepit dan empat pasang kaki yang kokoh. Pasangan kaki paling belakang berbentuk seperti dayung.",
+      text: "Kepiting bakau banyak dijumpai di berbagai hutan bakau. Kepiting memiliki sepasang lengan sepit dan empat pasang kaki yang kokoh.",
       image: "images/kepiting.jpg",
     },
     {
@@ -61,7 +61,7 @@ export default function Home() {
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {cards.map((card, index) => (
             <Box key={index} height={"6xl"} position="relative" backgroundPosition="center" backgroundRepeat="no-repeat" backgroundSize="cover" backgroundImage={`url(${card.image})`}>
-              <Container size="container.lg" height="700px" right={"200px"} width={"full"} position="relative">
+              <Container size="container.lg" height="800px" width={"full"} position="relative">
                 <Stack spacing={4} w={"full"} maxW={"lg"} position="absolute" top="50%" transform="translate(0, -50%)">
                   <Heading color="black" fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
                     {card.title}
