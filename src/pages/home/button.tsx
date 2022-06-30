@@ -6,12 +6,12 @@ export default function Btn(props: ButtonProps) {
       <Button
         {...props}
         /* flex={1} */
-        px={4}
+        px={20}
         fontSize={"sm"}
         rounded={"full"}
         bg={"blue.400"}
         color={"white"}
-        mr={"430px"}
+        mr={"350px"}
         boxShadow={"0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"}
         _hover={{
           bg: "blue.500",
