@@ -1,0 +1,84 @@
+{
+    "coverImageURL": "/assets/booksContent-7/COVER.jpg",
+    "content": [
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 2.jpg",
+            "description": "Suatu hari, Khan tertidur saat memancing. Ia sedang menunggu ikan memakan nasi yang ia jadikan umpan."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 3.jpg",
+            "description": "Tiba-tiba, tali pancingnya bergerak! Ia langsung terbangun. Apa ya, yang kira-kira menggerakkannya?"
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 4.jpg",
+            "description": "Sesosok makhluk besar berusaha keras membebaskan diri dari tali pancing!"
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 5.jpg",
+            "description": "Makhluk itu menyentak dan menarik tali dengan sangat kuat hingga Khan tercebur ke air."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 6.jpg",
+            "description": "Makhluk itu menyeretnya jauh ke dalam laut. Khan akhirnya sadar kalau makhluk itu adalah ular air raksasa!"
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 7.jpg",
+            "description": "Khan melihat berbagai macam hewan yang tinggal di dalam laut."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 8.jpg",
+            "description": "Khan dan si ular air berenang beriringan."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 9.jpg",
+            "description": "Si ular air membawa Khan ke sebongkah batu, lalu dia berbicara kepada Khan. “Telurku tersangkut di bawah batu besar ini!” katanya."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 10.jpg",
+            "description": "Khan mencoba mendorongnya, tetapi batu itu terlalu berat! Khan punya ide. Ia membuka tas berisi nasi yang ia bawa di punggungnya."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 11.jpg",
+            "description": "Hewan-hewan laut yang ada di sekitar sana langsung menghampiri Khan karena tergiur dengan nasi itu. Khan meminta mereka semua untuk membantunya mengeluarkan telur. Sebagai balasannya, Khan akan memberi mereka nasi."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 12.jpg",
+            "description": "Hewan-hewan laut itu setuju. Bersama-sama, mereka pergi ke batu besar."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 13.jpg",
+            "description": "Sesampainya di batu, mereka bersama-sama mendorongnya dengan sekuat tenaga"
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 14.jpg",
+            "description": "Setelah mengerahkan segala usaha, batu itu akhirnya bergeser. Khan bisa melihat telur ular air yang berharga itu!"
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 15.jpg",
+            "description": "Khan menjulurkan tangannya dan mengambil telur itu dengan sangat hati-hati."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 16.jpg",
+            "description": "Telur itu bergetar dan mulai retak! Apa yang terjadi?"
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 17.jpg",
+            "description": "Tak lama, seekor ular air kecil keluar dari telur. Dia selamat! Induk ular air sangat gembira. Begitu pula Khan dan hewan laut lainnya."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 18.jpg",
+            "description": "Karena merasa sangat lelah, Khan akhirnya tertidur. Ular air menggendong Khan di punggungnya."
+        },
+        {
+            "imageURL": "/assets/booksContent-7/Petualangan 19.jpg",
+            "description": "Ketika Khan terbangun, ia sudah berada di tepi sungai lagi. Ia melihat ember yang tadinya kosong, kini sudah penuh dengan ikan. Apakah itu semua hanya mimpi?"
+        }
+    ],
+    "name": "Petualangan bersama Ular Air",
+    "id": "A003",
+    "category": "adventure",
+    "description": "Khan menangkap ular air! Di petualangan bawah air ini, Khan melihat bermacam-macam makhluk aneh. Ia berteman dengan mereka, bahkan berhasil menyelamatkan hari.",
+    "author": "Mangkonephet Sayasane",
+    "illustrator": "Mangkonephet Sayasane",
+    "publisher": "Room to Read"
+}

@@ -1,0 +1,56 @@
+{
+    "coverImageURL": "/assets/booksContent-5/COVER.png",
+    "content": [
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 2.png",
+            "description": "Kami semua pergi ke Pekan Raya Dasara."
+        },
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 3.png",
+            "description": "Ayah membelikan Chintu kacamata yang lucu. \n Ibu membelikanku topi berwarna biru, dan adik perempuanku mendapatkan gula-gula. "
+        },
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 4.png",
+            "description": "Dalam perjalanan pulang, angin bertiup kencang dan menerbangkan topiku."
+        },
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 5.png",
+            "description": "Topiku tersangkut di dahan pohon pipal tua."
+        },
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 6.png",
+            "description": "Aku menangis keras-keras dan tidak ingin makan"
+        },
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 7.png",
+            "description": "Malam harinya, bulan muncul. \n Dia melihat topiku yang tersangkut di pohon."
+        },
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 8.png",
+            "description": "Dia memakai topi ku dan tersenyum kepadaku. \n Aku membalas senyumannya."
+        },
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 9.png",
+            "description": "Keesokan harinya, sepulang sekolah, Mama memberiku topi baru berwarna merah. “Bulan yang mengirimkannya,” ujar Mama."
+        },
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 10.png",
+            "description": "Malam itu, bulan dan aku sama-sama memakai topi. Kami senang sekali. "
+        },
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 11.png",
+            "description": "Menurutmu, perlukah matahari memakai topi? "
+        },
+        {
+            "imageURL": "/assets/booksContent-5/bulan dan topi 12.png",
+            "description": "Tebak topi mana yang kupakai hari ini!"
+        }
+    ],
+    "name": "Bulan dan Topi",
+    "id": "N002",
+    "category": "nature",
+    "description": "Anak laki-laki yang kehilangan topinya karena terbawa angin kencang. Hingga pada akhirnya, ia menggunakan topinya kembali bersama dengan bulan.",
+    "author": "Rohini Nilekani",
+    "illustrator": "Anggie & Upesh",
+    "publisher": "Pratham Books"
+}
