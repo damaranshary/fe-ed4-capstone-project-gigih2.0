@@ -5,6 +5,8 @@ import { Box, IconButton, useBreakpointValue, Stack, Heading, Text, Container } 
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
 import Footer from "../../component/footer";
+import Btn from "./button";
+import { Link } from "react-router-dom";
 
 const settings = {
   dots: true,
@@ -26,19 +28,19 @@ export default function Home() {
 
   const cards = [
     {
-      title: "Design Projects 1",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      title: "Kepiting untuk makan malam",
+      text: "Kepiting bakau banyak dijumpai di berbagai hutan bakau. Kepiting memiliki sepasang lengan sepit dan empat pasang kaki yang kokoh. Pasangan kaki paling belakang berbentuk seperti dayung.",
+      image: "images/kepiting.jpg",
+    },
+    {
+      title: "Enggang yang istimewa",
+      text: "Cerita Enggang yang Istimewa ini terinspirasi dari cerita rakyat Kalimantan tentang persahabatan manusia dan burung enggang badak yang bernama Latin Buceros rhinoceros. Kisah itu menceritakan peran enggang yang secara tidak langsung menjaga kelestarian hutan.",
       image: "images/enggang.jpg",
     },
     {
-      title: "Design Projects 2",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      title: "Cahaya Bulan diatas Laut",
+      text: "Nihla tersenyum hangat. Kemudian, Nihla menari di dalam air, menyentuh buih ombak, mengarahkan pandangannya yang menenangkan ke puncak ombak yang ganas, dan menenangkan lautan yang marah.",
       image: "images/cahaya-bulan.jpg",
-    },
-    {
-      title: "Design Projects 3",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image: "images/kepiting.jpg",
     },
   ];
 
@@ -59,12 +61,17 @@ export default function Home() {
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
           {cards.map((card, index) => (
             <Box key={index} height={"6xl"} position="relative" backgroundPosition="center" backgroundRepeat="no-repeat" backgroundSize="cover" backgroundImage={`url(${card.image})`}>
-              <Container size="container.lg" height="700px" position="relative">
-                <Stack spacing={6} w={"full"} maxW={"lg"} position="absolute" top="50%" transform="translate(0, -50%)">
-                  <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>{card.title}</Heading>
-                  <Text fontSize={{ base: "md", lg: "lg" }} color="GrayText">
+              <Container size="container.lg" height="700px" right={"200px"} width={"full"} position="relative">
+                <Stack spacing={4} w={"full"} maxW={"lg"} position="absolute" top="50%" transform="translate(0, -50%)">
+                  <Heading color="black" fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+                    {card.title}
+                  </Heading>
+                  <Text fontSize={{ base: "md", lg: "lg" }} color="ghostwhite">
                     {card.text}
                   </Text>
+                  <Link to="/read">
+                    <Btn />
+                  </Link>
                 </Stack>
               </Container>
             </Box>
