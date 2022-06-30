@@ -5,7 +5,7 @@ import { BreadcrumbProps } from '../../types/types';
 
 export const BreadcrumbForLegendsContent = ({ currentPage }: BreadcrumbProps) => {
     return (
-        <Breadcrumb mt={10} separator={<ChevronRightIcon color='gray.500' />}>
+        <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
             <BreadcrumbItem>
                 <BreadcrumbLink as={ReactRouterLink} to='/'>Home</BreadcrumbLink>
             </BreadcrumbItem>
@@ -24,7 +24,7 @@ export const BreadcrumbForLegendsContent = ({ currentPage }: BreadcrumbProps) =>
 
 export const BreadcrumbForFunFactContent = ({ currentPage }: BreadcrumbProps) => {
     return (
-        <Breadcrumb mt={10} separator={<ChevronRightIcon color='gray.500' />}>
+        <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
             <BreadcrumbItem>
                 <BreadcrumbLink as={ReactRouterLink} to='/'>Home</BreadcrumbLink>
             </BreadcrumbItem>
@@ -40,3 +40,49 @@ export const BreadcrumbForFunFactContent = ({ currentPage }: BreadcrumbProps) =>
         </Breadcrumb>
     )
 }
+
+export const BreadcrumbForReadPage = ({ currentPage }: BreadcrumbProps) => {
+    return (
+        <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/'>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink>{currentPage}</BreadcrumbLink>
+            </BreadcrumbItem>
+        </Breadcrumb>
+    )
+}
+
+export const BreadcrumbForReadLegendsPage = ({ currentPage }: BreadcrumbProps) => {
+    return (
+        <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/'>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/read'>Read</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink>{currentPage}</BreadcrumbLink>
+            </BreadcrumbItem>
+        </Breadcrumb>
+    )
+}
+
+export const BreadcrumbForReadFunFactPage = ({ currentPage }: BreadcrumbProps) => {
+    return (
+        <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/'>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/read'>Read</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink>{currentPage}</BreadcrumbLink>
+            </BreadcrumbItem>
+        </Breadcrumb>
+    )
+}
+

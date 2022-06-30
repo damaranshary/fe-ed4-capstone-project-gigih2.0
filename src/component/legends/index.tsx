@@ -30,7 +30,7 @@ const LegendsComponent = () => {
     const fetcher = legendsBook.map(book => fetchLegendsData(book))
 
     return (
-        <Container maxW='6xl' centerContent>
+        <Container maxW='6xl' centerContent mb={8}>
             <Link as={ReactRouterLink} to='/read/legends'><Heading>Legends</Heading></Link>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="1">
                 {legendsData !== undefined && legendsData.map((item) =>
@@ -45,7 +45,6 @@ const LegendsComponent = () => {
                     />
                 )}
             </SimpleGrid>
-
         </Container>
 
     )
