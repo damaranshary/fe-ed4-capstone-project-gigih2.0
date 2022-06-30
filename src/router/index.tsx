@@ -7,7 +7,8 @@ import Quiz from "../pages/quiz";
 import Watch from "../pages/watch";
 import Legends from "../component/legends";
 import FunFact from "../component/funFact"
-import Vocab from "../pages/vocab";
+import Vocab from '../component/mainVocab';
+import VocabContent from "../component/vocabItems/content";
 import BookContent from "../component/books/content";
 
 const AppRouter = () => {
@@ -28,9 +29,17 @@ const AppRouter = () => {
                             <Route path=":id" element={<BookContent />} />
                         </Route>
                     </Route>
-                    <Route path="quiz" element={<Quiz />} />
+                    <Route path="learn">
+                        <Route index element={<Vocab />} />
+                        <Route path="vocabs">
+                            <Route index element={<Vocab />} />
+                            <Route path=":id" element={<VocabContent />} />
+                        </Route>
+                        <Route path="vocabs" element={<FunFact />} />
+                    </Route>
                     <Route path="watch" element={<Watch />} />
-                    <Route path="learn" element={<Vocab />} />
+                    <Route path="quiz" element={<Quiz />} />
+                    {/* <Route path="learn" element={<Vocab />} /> */}
                     <Route path="*" element={<div>nothing here code:404</div>}></Route>
                 </Route>
             </Routes>

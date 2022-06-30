@@ -1,8 +1,8 @@
 import React from "react";
 import { Wrap, WrapItem, Center } from '@chakra-ui/react'
-import Animal from "../../imgstock/AN.png";
-import Vehicle from "../../imgstock/Vehicle.png";
-import Food from "../../imgstock/Food.png";
+import Animals from "../../imgstock/VH.png";
+import Vehicle from "../../imgstock/VH.png";
+import Food from "../../imgstock/FD.png";
 
 const Vocab = () => {
     return (
@@ -13,7 +13,7 @@ const Vocab = () => {
             <Wrap spacing='30px' justify='center' className="vocab">
                 <WrapItem>
                     <Center>
-                        <a href="#"><img width= "200px" src={Animal} alt="Nothing To show"></img></a>
+                        <a href="#"><img width= "200px" src={Animals} alt="Nothing To show"></img></a>
                     </Center>
                 </WrapItem>
                 <WrapItem>
