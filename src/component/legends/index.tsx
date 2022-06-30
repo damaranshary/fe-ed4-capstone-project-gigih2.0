@@ -3,31 +3,26 @@ import { Link as ReactRouterLink } from "react-router-dom";
 import Books from '../books';
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { fetcherBooksData } from "../../api-call/fetchJSONData";
 import { BooksDataProps } from "../../types/types";
+import { setLegendsData } from "../../redux/slices/legendsDataSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { RootState } from "../../redux/store";
 
 const LegendsComponent = () => {
     const legendsBook = ['/data/B001.json', '/data/B002.json', '/data/B003.json']
-    const [legendsData, setLegendsData] = useState<BooksDataProps[]>([]);
+    const legendsData = useAppSelector((state: RootState) => state.legendsData.value);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-        setLegendsDataToState();
+        legendsData !== undefined && setLegendsDataToState();
     }, [])
 
     const setLegendsDataToState = async () => {
-        Promise.all(fetcher).then((item) => {
-            setLegendsData(item);
+        Promise.all(fetcherBooksData(legendsBook)).then((item) => {
+            dispatch(setLegendsData(item));
         })
     }
-
-    const fetchLegendsData = async (pathURL: string): Promise<BooksDataProps> => {
-        const data: any =
-            await axios
-                .get(pathURL)
-                .catch(err => console.log(err));
-        return data.data;
-    }
-
-    const fetcher = legendsBook.map(book => fetchLegendsData(book))
 
     return (
         <Container maxW='6xl' centerContent mb={8}>
