@@ -1,0 +1,30 @@
+{
+    "coverImageURL": "/assets/vocabsContent-3/VehicleCover.png",
+    "content": [
+        {
+            "imageURL": "/assets/vocabsContent-3/VH.png",
+            "description": ""
+        },
+        {
+            "imageURL": "/assets/vocabsContent-3/VH1.png",
+            "description": ""
+        },
+        {
+            "imageURL": "/assets/vocabsContent-3/VH2.png",
+            "description": ""
+        },
+        {
+            "imageURL": "/assets/vocabsContent-3/VH3.png",
+            "description": ""
+        },
+        {
+            "imageURL": "/assets/vocabsContent-3/VH4.png",
+            "description": ""
+        }
+    ],
+    "name": "Kendaraan",
+    "id": "V003",
+    "category": "vocabs",
+    "description": "Nama nama kendaraan dalam bahasa Inggris",
+    "author": "Pratiwi Sibarani"
+}

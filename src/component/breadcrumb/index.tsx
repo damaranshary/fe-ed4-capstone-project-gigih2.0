@@ -86,3 +86,35 @@ export const BreadcrumbForReadFunFactPage = ({ currentPage }: BreadcrumbProps) =
     )
 }
 
+export const BreadcrumbForLearnPage = ({ currentPage }: BreadcrumbProps) => {
+    return (
+        <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/'>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink>{currentPage}</BreadcrumbLink>
+            </BreadcrumbItem>
+        </Breadcrumb>
+    )
+}
+
+export const BreadcrumbForVocabContent = ({ currentPage }: BreadcrumbProps) => {
+    return (
+        <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/'>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/learn'>Learn</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/learn/vocabs'>Vocabulary</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink>{currentPage}</BreadcrumbLink>
+            </BreadcrumbItem>
+        </Breadcrumb>
+    )
+}
+

@@ -1,4 +1,4 @@
-import { Button, Container, Center, Image, Box, IconButton, useBreakpointValue, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import { Button, Container, Center, Image, Box, IconButton, useBreakpointValue, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
@@ -9,7 +9,7 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 import vocabsData from '../../../data/vocabOne';
 import axios from 'axios';
 import { VocabsDataProps } from '../../../types/types';
-import { BreadcrumbForLegendsContent } from '../../breadcrumb';
+import { BreadcrumbForVocabContent } from '../../breadcrumb';
 import { Wrap, WrapItem} from '@chakra-ui/react'
 
 
@@ -36,7 +36,7 @@ const VocabContent = () => {
     const getVocabContentFromID = async (): Promise<VocabsDataProps> => {
         const data: any =
             await axios
-                .get(`/data/${vocabID}.json`)
+                .get(`/data/vocab/${vocabID}.json`)
                 .catch(err => console.log(err));
         return data.data;
     }
@@ -49,74 +49,77 @@ const VocabContent = () => {
     return (
         <>
             <Center>
-                {data !== undefined && data.category == 'Vocabulary' &&
-                    <BreadcrumbForLegendsContent
+                {data !== undefined && data.category === 'vocabs' &&
+                    <BreadcrumbForVocabContent
                         currentPage={data.name} />}
-                {data !== undefined && data.category == 'Vocabulary' &&
-                    <BreadcrumbForLegendsContent
+                {data !== undefined && data.category === 'funfact' &&
+                    <BreadcrumbForVocabContent
                         currentPage={data.name} />}
             </Center>
-            <Center mt={10}>
-
-                <Box
-                    position={'relative'}
-                    height={'full'}
-                    width={'800px'}
-                    overflow={'hidden'}>
-                    {/* CSS files for react-slick */}
-                    <link
-                        rel="stylesheet"
-                        type="text/css"
-                        charSet="UTF-8"
-                        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-                    />
-                    <link
-                        rel="stylesheet"
-                        type="text/css"
-                        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-                    />
-                    {/* Left Icon */}
-                    <IconButton
-                        aria-label="left-arrow"
-                        colorScheme="messenger"
-                        borderRadius="full"
-                        position="absolute"
-                        left={side}
-                        top={top}
-                        transform={'translate(0%, -50%)'}
-                        zIndex={2}
-                        onClick={() => slider?.slickPrev()}>
-                        <BiLeftArrowAlt />
-                    </IconButton>
-                    {/* Right Icon */}
-                    <IconButton
-                        aria-label="right-arrow"
-                        colorScheme="messenger"
-                        borderRadius="full"
-                        position="absolute"
-                        right={side}
-                        top={top}
-                        transform={'translate(0%, -50%)'}
-                        zIndex={2}
-                        onClick={() => slider?.slickNext()}>
-                        <BiRightArrowAlt />
-                    </IconButton>
-                    {/* Slider */}
-                    <Slider {...settings} ref={(slider) => setSlider(slider)}>
-                        {data?.content.map(({ imageURL, description }, index) => (
-                            <>
-                                <Wrap spacing='30px' justify='center' className="vocab">
-                                    <WrapItem>
-                                        <Center>
-                                        <Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' width="400px"/>
-                                        </Center>
-                                    </WrapItem>
-                                </Wrap>
-                            </>
-                        ))}
-
-                    </Slider>
-                </Box>
+            <Center mt={8}>
+                <Stack direction='column'>
+                    <Center >
+                        <Text fontSize='3xl' as='h2' mb={8}>{data?.name}</Text>
+                    </Center>
+                    <Box
+                        position={'relative'}
+                        height={'full'}
+                        width={'800px'}
+                        overflow={'hidden'}>
+                        {/* CSS files for react-slick */}
+                        <link
+                            rel="stylesheet"
+                            type="text/css"
+                            charSet="UTF-8"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+                        />
+                        <link
+                            rel="stylesheet"
+                            type="text/css"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+                        />
+                        {/* Left Icon */}
+                        <IconButton
+                            aria-label="left-arrow"
+                            colorScheme="messenger"
+                            borderRadius="full"
+                            position="absolute"
+                            left={side}
+                            top={top}
+                            transform={'translate(0%, -50%)'}
+                            zIndex={2}
+                            onClick={() => slider?.slickPrev()}>
+                            <BiLeftArrowAlt />
+                        </IconButton>
+                        {/* Right Icon */}
+                        <IconButton
+                            aria-label="right-arrow"
+                            colorScheme="messenger"
+                            borderRadius="full"
+                            position="absolute"
+                            right={side}
+                            top={top}
+                            transform={'translate(0%, -50%)'}
+                            zIndex={2}
+                            onClick={() => slider?.slickNext()}>
+                            <BiRightArrowAlt />
+                        </IconButton>
+                        {/* Slider */}
+                        <Slider {...settings} ref={(slider) => setSlider(slider)}>
+                            {data?.content.map(({ imageURL, description }, index) => (
+                                <>
+                                    <Wrap spacing='30px' justify='center' className="vocab">
+                                        <WrapItem>
+                                            <Center>
+                                            <Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' width="300px"/>
+                                            </Center>
+                                        </WrapItem>
+                                    </Wrap>
+                                </>
+                            ))}
+                        </Slider>
+                    </Box>
+                </Stack>
             </Center>
         </>
     );

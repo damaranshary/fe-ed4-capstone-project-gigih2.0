@@ -1,0 +1,30 @@
+{
+    "coverImageURL": "/assets/vocabsContent-2/FoodCover.png",
+    "content": [
+        {
+            "imageURL": "/assets/vocabsContent-2/FD.png",
+            "description": "Keju"
+        },
+        {
+            "imageURL": "/assets/vocabsContent-2/FD1.png",
+            "description": "Roti"
+        },
+        {
+            "imageURL": "/assets/vocabsContent-2/FD2.png",
+            "description": "Pisang"
+        },
+        {
+            "imageURL": "/assets/vocabsContent-2/FD3.png",
+            "description": "Cokelat"
+        },
+        {
+            "imageURL": "/assets/vocabsContent-2/FD4.png",
+            "description": "Kue Kering"
+        }
+    ],
+    "name": "Makanan",
+    "id": "V002",
+    "category": "vocabs",
+    "description": "Nama nama makanan dalam bahasa Inggris",
+    "author": "Pratiwi Sibarani"
+}

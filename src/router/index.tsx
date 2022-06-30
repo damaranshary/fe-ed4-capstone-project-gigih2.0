@@ -39,7 +39,6 @@ const AppRouter = () => {
                     </Route>
                     <Route path="watch" element={<Watch />} />
                     <Route path="quiz" element={<Quiz />} />
-                    {/* <Route path="learn" element={<Vocab />} /> */}
                     <Route path="*" element={<div>nothing here code:404</div>}></Route>
                 </Route>
             </Routes>

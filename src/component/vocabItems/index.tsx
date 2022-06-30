@@ -1,21 +1,14 @@
 import {
     Flex,
-    Circle,
     Box,
     Image,
-    Badge,
-    Icon,
-    chakra,
     Button,
     Center,
-    Tooltip,
     Link,
     Heading,
     Text
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom'
-import { FiShoppingCart } from 'react-icons/fi';
-
 import { VocabsDataProps } from '../../types/types';
 
 const Vocabs = ({ coverImageURL, name, id, category, description }: VocabsDataProps) => {
@@ -33,6 +26,8 @@ const Vocabs = ({ coverImageURL, name, id, category, description }: VocabsDataPr
                     alt={`Picture of ${name}`}
                     roundedTop="lg"
                     width="200px"
+                    marginStart='auto'
+                    marginEnd='auto'
                 />
                 <Box p="6">
                     <Center w='full'>
@@ -43,8 +38,8 @@ const Vocabs = ({ coverImageURL, name, id, category, description }: VocabsDataPr
                                 as="h4"
                                 lineHeight="tight"
                             >
-                                <Heading as='h3' size='md'>{name}</Heading>
-                                <Text fontSize='xs' mt={2}>{description}</Text>
+                                <Heading as='h3' size='md' textAlign='center'>{name}</Heading>
+                                <Text fontSize='xs' textAlign='center' mt={2}>{description}</Text>
                             </Box>
                             <Link as={ReactRouterLink} to={linkToDescription}>
                                 <Button
@@ -68,10 +63,8 @@ const Vocabs = ({ coverImageURL, name, id, category, description }: VocabsDataPr
                                     Learn
                                 </Button>
                             </Link>
-
                         </Flex>
                     </Center>
-
                 </Box>
             </Box>
         </Flex>

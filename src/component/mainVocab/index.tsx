@@ -1,4 +1,4 @@
-import { Container, SimpleGrid, Heading, Link, Box } from "@chakra-ui/react";
+import { Container, SimpleGrid, Heading, Link} from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import Vocabs from '../vocabItems';
 import vocabsData from '../../data/vocabOne';
@@ -7,22 +7,28 @@ import { useEffect, useState } from "react";
 import { VocabsDataProps } from "../../types/types";
 
 const Vocab = () => {
-    const vocabsDaily = ['/data/V001.json', '/data/V002.json', '/data/V003.json']
+    const vocabsDaily = ['/data/vocab/V001.json', '/data/vocab/V002.json', '/data/vocab/V003.json']
     const [vocabsData, setVocabsData] = useState<VocabsDataProps[]>([]);
 
     useEffect(() => {
-        vocabsDaily.map((item) => {
-            fetchVocabsData(item).then(res => setVocabsData([...vocabsData, res]));
-            console.log(item);
-        })
+        setVocabsDataToState();
     }, [])
 
+    const setVocabsDataToState = async () => {
+        Promise.all(fetcher).then((item) => {
+            setVocabsData(item);
+        })
+    }
+
     const fetchVocabsData = async (pathURL: string): Promise<VocabsDataProps> => {
-        const data: any = await axios
-            .get(pathURL)
-            .catch(err => console.log(err));
+        const data: any =
+            await axios
+                .get(pathURL)
+                .catch(err => console.log(err));
         return data.data;
     }
+
+    const fetcher = vocabsDaily.map(vocab => fetchVocabsData(vocab))
 
     return (
         <Container maxW='6xl' centerContent>
