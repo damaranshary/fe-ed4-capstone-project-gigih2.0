@@ -44,12 +44,13 @@ const Books = ({ coverImageURL, name, id, category, description, author }: Books
                             >
                                 <Heading size='md'>{name}</Heading>
                                 <Text color='gray.500' fontSize='sm' mt={1}>{author}</Text>
-                                <Text fontSize='xs' mt={2} noOfLines={[1, 2, 3]}>{description}</Text>
+                                <Text fontSize='xs' mt={2} noOfLines={[1, 2]}>{description}</Text>
                             </Box>
                             <Center>
                                 <Link as={ReactRouterLink} to={linkToDescription}>
                                     <Button
-                                        mt="4"
+                                        mt={6}
+                                        mb={4}
                                         flex={1}
                                         fontSize={'sm'}
                                         rounded={'full'}
