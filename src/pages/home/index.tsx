@@ -4,7 +4,6 @@ import { homeObjOne, homeObjThree, homeObjTwo } from "./Data";
 import { Box, IconButton, useBreakpointValue, Stack, Heading, Text, Container } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
-import Footer from "../../component/footer";
 import Btn from "./button";
 import { Link } from "react-router-dom";
 
@@ -81,7 +80,6 @@ export default function Home() {
       <HeroSection {...homeObjOne} />
       <HeroSection {...homeObjTwo} />
       <HeroSection {...homeObjThree} />
-      <Footer />
     </>
   );
 }

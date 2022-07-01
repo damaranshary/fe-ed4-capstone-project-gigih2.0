@@ -5,6 +5,7 @@ import Read from "../pages/read";
 import Learn from "../pages/learn";
 import Watch from "../pages/watch";
 import Quiz from "../pages/quiz";
+import Footer from "../component/footer";
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
         <Route path="/watch" element={<Watch />} />
         <Route path="/quiz" element={<Quiz />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
