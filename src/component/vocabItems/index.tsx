@@ -47,7 +47,7 @@ const Vocabs = ({ coverImageURL, name, id, category, description}: VocabsDataPro
                                     flex={1}
                                     fontSize={'sm'}
                                     rounded={'full'}
-                                    bg={'blue.400'}
+                                    bg={'teal'}
                                     color={'white'}
                                     size='lg'
                                     w='300px'
@@ -55,10 +55,10 @@ const Vocabs = ({ coverImageURL, name, id, category, description}: VocabsDataPro
                                         '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
                                     }
                                     _hover={{
-                                        bg: 'blue.500',
+                                        bg: 'teal',
                                     }}
                                     _focus={{
-                                        bg: 'blue.500',
+                                        bg: 'teal',
                                     }}>
                                     Learn
                                 </Button>
