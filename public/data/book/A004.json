@@ -1,40 +1,52 @@
 {
-    "coverImageURL": "/assets/booksContent-9/COVER.png",
+    "coverImageURL": "/assets/booksContent-1/Cover.jpg",
     "content": [
         {
-            "imageURL": "/assets/booksContent-9/Tara 2.png",
-            "description": "Tara tidak sabar! Lamban sekali keretanya. Ia mengintip ke luar jendela. Lampu-lampu berkelap-kelip di gedung-gedung yang menjulang tinggi. Ketika semua orang di gerbong itu bersiap tidur, seseorang bertanya kepada Tara, “ Nak, kau kabur dari rumah?” “Tentu tidak!” kata Tara. Paginya Tara turun di stasiun Meenapur."
+            "imageURL": "/assets/booksContent-1/Pergi ke Pasar 2.jpg",
+            "description": "Ibu mengajak aku pergi ke pasar. Disana ada banyak penjual dan pembeli. Beberapa orang asyik berbelanja. Ada juga yang sekadar melihat-lihat barang yang dijajakan. Bagaimana dengan Ibu?"
         },
         {
-            "imageURL": "/assets/booksContent-9/Tara 3.png",
-            "description": "Tara berjalan kearah sungai Ganga dan menaiki sebuah perahu yang padat. Orang-orang bertanya tanya,”Siapakah dia, berani berkelana seorang diri?” Ketika Tara turun di tujuannya, tukang perahu bertanya padanya, “Kau kabur dari rumah?” “Tentu tidak, Pak. Aku dalam perjalanan pulang!”"
+            "imageURL": "/assets/booksContent-1/Pergi ke Pasar 3.jpg",
+            "description": "Pertama, aku dan Ibu menuju ke toko sembako. Ibu membeli gandum, beras, gula dan dal. Aku dan Ibu tidak perlu bersusah payah menenteng tas-tas belanjaan. Penjaga toko yang akan mengirim belanjaan tadi ke rumahku."
         },
         {
-            "imageURL": "/assets/booksContent-9/Tara 4.png",
-            "description": "Tara sampai di sebuah hutan. Ia mengeluarkan kameranya. Seekor rusa memperhatikannya seolah bertanya apa yang sedang Tara lakukan di sana! Tara mengambil foto rusa itu dan berkata, “Aku pulang, rusa sayang. Aku pulang ke rumah leluhurku.”"
+            "imageURL": "/assets/booksContent-1/Pergi ke Pasar 4.jpg",
+            "description": "Selanjutnya, aku dan Ibu sampai di toko sayuran.  Lalu, aku bertanya, “Apakah Ibu akan membeli sayuran?”  “Tidak,” jawab Ibu.  Penjual menawarkan dagangannya, “Mari, dibeli.  Sayur-mayurnya masih segar.”"
         },
         {
-            "imageURL": "/assets/booksContent-9/Tara 5.png",
-            "description": "Menjelang senja, Tara berjalan di atas jembatan gantung. Jembatan itu pun bergoyang seirama langkahnya. Dia tersenyum membayangkan apa yang menunggunya di seberang sana."
+            "imageURL": "/assets/booksContent-1/Pergi ke Pasar 5.jpg",
+            "description": "Mengapa Ibu berhenti di toko ini? Oh, ini adalah depot minyak.  Tempat ini dipenuhi dengan aroma minyak.  Ibu protes pada penjual minyak, “Minyak ini harganya selangit.”  Si penjual tampak muram."
         },
         {
-            "imageURL": "/assets/booksContent-9/Tara 6.png",
-            "description": "Ketika ia sampai di seberang, Tara mengeluarkan peta dan merencanakan perjalanan selanjutnya. Ia menutup matanya dan menarik nafas dalam-dalam. Ah! Aroma dedaunan di hutan itu sungguh segar!"
+            "imageURL": "/assets/booksContent-1/Pergi ke Pasar 6.jpg",
+            "description": "Aku dan Ibu melewati lapak penjual ikan.  Beberapa orang tidak menyukai aroma tempat ini. Namun, aku suka ikan. Lihat, betapa uniknya pakaian nelayan perempuan itu.  Apakah kamu melihat seekor kucing yang gemuk?  Kucing itu hanya duduk di sana, makan sisa-sisa ikan, dan menjadi gemuk."
         },
         {
-            "imageURL": "/assets/booksContent-9/Tara 7.png",
-            "description": "Tara membuat api unggun. Lalu ia makan bekal yang dibawanya. Setelah itu, Tara berbaring di bawah bintang-bintang di langit. Besok ia akan menyeberangi hutan. Lalu ia akan naik bis ke rumah kakek dan neneknya. Sekarang Tara Prakash, juru foto yang terkenal itu, akan tidur di bawah bintang-bintang dan bermimpi tentang rumahnya."
+            "imageURL": "/assets/booksContent-1/Pergi ke Pasar 7.jpg",
+            "description": "Aku dan Ibu berhenti di toko susu.  Ibu membeli mentega dan keju.  Mengapa toko susu tidak menjual es krim?  Aku suka makan es krim.  Apakah Ibu akan membelikanku es krim?"
         },
         {
-            "imageURL": "/assets/booksContent-9/Tara 8.png",
-            "description": "Halo pembaca, Pernahkah kau menghitung bintang-bintang di langit? Berapa banyak kiranya yang dapat kau hitung? Ketika tinggal di hutan, sebutkan nama beberapa alat yang harus kau bawa. Pada hari-hari apakah dalam sebulan kau dapat melihat bintang lebih jelas? Mengapa?"
+            "imageURL": "/assets/booksContent-1/Pergi ke Pasar 8.jpg",
+            "description": "“Ibu akan membeli kuali dan panci?” Aku bertanya pada Ibuku.  Tidak ada satu pun orang di toko perabotan rumah.  Orang-orang biasanya membeli kuali dan panci   ketika ada sebuah pernikahan atau perayaan."
+        },
+        {
+            "imageURL": "/assets/booksContent-1/Pergi ke Pasar 9.jpg",
+            "description": "“Berhenti! Jangan masuk ke toko ini!” Aku berteriak.  Ibuku suka ke toko kain.  Ibuku memegang-megang kain yang dijajakan.  Penjaga toko kain menawarkan bermacam-macam sari. Namun, Ibu tidak jadi membeli satu kain pun."
+        },
+        {
+            "imageURL": "/assets/booksContent-1/Pergi ke Pasar 10.jpg",
+            "description": "“Ini yang aku tunggu-tunggu,” toko mainan!  Boneka beruang itu sangat besar!. Aku memimpikan mengendarai skuter ini.  Aku juga belum punya mobil-mobilan truk ini."
+        },
+        {
+            "imageURL": "/assets/booksContent-1/Pergi ke Pasar 11.jpg",
+            "description": "Namun, aku sudah berjanji pada Ibu, “Aku hanya akan melihat dan memegang mainan-mainan ini.” \n“Aku tidak akan minta dibelikan mainan hari ini.”  Aku akan minta dibelikan mainan saat ulang tahunku."
         }
     ],
-    "name": "Tara Menemukan Bintang-Bintangnya",
+    "name": "Pergi Ke Pasar",
     "id": "A004",
-    "category": "adventure",
-    "description": "Sukakah jika kau tidur di bawah bintang-bintang? Tara sangat menyukainya! Ikuti Tara dalam sebuah perjalanan yang seru.",
-    "author": "Mala Kumar, Manisha Chaudhry",
-    "illustrator": "Shikha Nambiar",
+    "category": "legends",
+    "description": "Kisah ini bercerita tentang seorang anak yang sedang pergi ke pasar bersama Ibunya",
+    "author": "Meera Tendolkar",
+    "illustrator": "Rijuta Ghate",
     "publisher": "Pratham Books"
 }
