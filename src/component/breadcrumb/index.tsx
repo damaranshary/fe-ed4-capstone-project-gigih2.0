@@ -54,6 +54,36 @@ export const BreadcrumbForReadPage = ({ currentPage }: BreadcrumbProps) => {
     )
 }
 
+export const BreadcrumbForWatchPage = ({ currentPage }: BreadcrumbProps) => {
+    return (
+        <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/'>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink>{currentPage}</BreadcrumbLink>
+            </BreadcrumbItem>
+        </Breadcrumb>
+    )
+}
+
+export const BreadcrumbForWatchContent = ({ currentPage }: BreadcrumbProps) => {
+    return (
+        <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/'>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+                <BreadcrumbLink as={ReactRouterLink} to='/watch'>Watch</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink>{currentPage}</BreadcrumbLink>
+            </BreadcrumbItem>
+        </Breadcrumb>
+    )
+}
+
+
 export const BreadcrumbForAdventurePage = ({ currentPage }: BreadcrumbProps) => {
     return (
         <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>

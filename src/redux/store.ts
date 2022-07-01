@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import natureBooksSlice from "./slices/natureBooksSlice";
 import legendsDataSlice from "./slices/adventureBooksSlice";
+import videosSlice from "./slices/videosSlice";
 
 export const store = configureStore({
     reducer: {
         natureBooks : natureBooksSlice,
-        adventureBooks : legendsDataSlice
+        adventureBooks : legendsDataSlice,
+        videos: videosSlice
     }
 })
 

@@ -1,38 +1,34 @@
-import { Center, SimpleGrid, Heading, Link, Box, VStack, Container } from "@chakra-ui/react";
+import { Center, SimpleGrid, Heading, Link, Box, VStack, Container, Flex, Image, Text, Button } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { VideoDataProps } from "../../types/types";
 import EmbedYoutubeVideo from "./embedYTVideo";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { RootState } from "../../redux/store";
+import { setVideosData } from "../../redux/slices/videosSlice";
+
+import { fetcherVideosData } from "../../api-call/fetchJSONData";
 
 const WatchComponent = () => {
-    const videosJSON = ['/data/video/YT001.json']
-    const [videosData, setVideosData] = useState<VideoDataProps[]>([]);
+    const videosJSONData = ['/data/video/YT001.json']
+    const videosData = useAppSelector((state: RootState) => state.videos.value);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         setVideosDataToState();
     }, [])
 
     const setVideosDataToState = async () => {
-        Promise.all(fetcher).then((item) => {
-            setVideosData(item);
+        Promise.all(fetcherVideosData(videosJSONData)).then((item) => {
+            dispatch(setVideosData(item));
         })
     }
 
-    const fetchLegendsData = async (pathURL: string): Promise<VideoDataProps> => {
-        const data: any =
-            await axios
-                .get(pathURL)
-                .catch(err => console.log(err));
-        return data.data;
-    }
-
-    const fetcher = videosJSON.map(video => fetchLegendsData(video))
-
     return (
-        <Container maxW={48} mt={24} centerContent>
+        <Container maxW={48}>
             <VStack>
-                <Link as={ReactRouterLink} to='/read/legends'><Heading>Legends</Heading></Link>
+                <Link as={ReactRouterLink} to='/watch'><Heading>Watch</Heading></Link>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="1">
                     {videosData !== undefined && videosData.map((item) =>
                         <EmbedYoutubeVideo
@@ -47,7 +43,6 @@ const WatchComponent = () => {
                 </SimpleGrid>
             </VStack>
         </Container>
-
     )
 }
 

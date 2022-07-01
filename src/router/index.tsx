@@ -10,6 +10,7 @@ import Nature from "../pages/read/nature";
 import Vocab from '../component/mainVocab';
 import VocabContent from "../component/vocabItems/content";
 import BookContent from "../component/books/content";
+import EmbedYoutubeVideoContent from "../component/watch/embedYTVideo/content";
 
 const AppRouter = () => {
     return (
@@ -36,7 +37,10 @@ const AppRouter = () => {
                             <Route path=":id" element={<VocabContent />} />
                         </Route>
                     </Route>
-                    <Route path="watch" element={<Watch />} />
+                    <Route path="watch">
+                        <Route index element={<Watch />} />
+                        <Route path=":id" element={<EmbedYoutubeVideoContent/>} />
+                    </Route>
                     <Route path="quiz" element={<Quiz />} />
                     <Route path="*" element={<div>nothing here code:404</div>}></Route>
                 </Route>
