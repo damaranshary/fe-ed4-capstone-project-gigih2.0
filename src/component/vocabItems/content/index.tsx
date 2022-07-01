@@ -81,7 +81,7 @@ const VocabContent = () => {
                         {/* Left Icon */}
                         <IconButton
                             aria-label="left-arrow"
-                            colorScheme="messenger"
+                            colorScheme="teal"
                             borderRadius="full"
                             position="absolute"
                             left={side}
@@ -94,7 +94,7 @@ const VocabContent = () => {
                         {/* Right Icon */}
                         <IconButton
                             aria-label="right-arrow"
-                            colorScheme="messenger"
+                            colorScheme="teal"
                             borderRadius="full"
                             position="absolute"
                             right={side}
