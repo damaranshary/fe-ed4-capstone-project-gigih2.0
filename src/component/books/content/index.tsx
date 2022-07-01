@@ -9,7 +9,7 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 import legendsData from '../../../data/legends';
 import axios from 'axios';
 import { BooksDataProps } from '../../../types/types';
-import { BreadcrumbForLegendsContent, BreadcrumbForFunFactContent } from '../../breadcrumb';
+import { BreadcrumbForAdventureBookContent, BreadcrumbForNatureBookContent } from '../../breadcrumb';
 import { useAppSelector } from '../../../redux/hooks';
 import { RootState } from '../../../redux/store';
 
@@ -29,9 +29,9 @@ const BookContent = () => {
     const params = useParams();
     const bookID = params?.id;
     const [contentData, setContentData] = useState<BooksDataProps>();
-    const funFactsData = useAppSelector((state: RootState) => state.funFactData.value);
-    const legendsData = useAppSelector((state: RootState) => state.legendsData.value);
-    const mergedData = funFactsData.concat(legendsData);
+    const natureBooksData = useAppSelector((state: RootState) => state.natureBooks.value);
+    const adventureBooksData = useAppSelector((state: RootState) => state.adventureBooks.value);
+    const mergedData = natureBooksData.concat(adventureBooksData);
 
     useEffect(() => {
         getBookContentFromID();
@@ -47,33 +47,33 @@ const BookContent = () => {
 
     const getBookContentFromID = () => {
         const filteredContentData = mergedData.filter(content => content.id === bookID);
-        filteredContentData !== undefined ? setContentData(filteredContentData[0]) : fetchBookContentFromID().then(res => setContentData(res)) ;
+        filteredContentData !== undefined ? setContentData(filteredContentData[0]) : fetchBookContentFromID().then(res => setContentData(res));
     }
 
     // These are the breakpoints which changes the position of the
     // buttons as the screen size changes
-    const top = useBreakpointValue({ base: '90%', md: '50%' });
-    const side = useBreakpointValue({ base: '30%', md: '10px' });
+    const top = useBreakpointValue({ base: '90%', sm: '300px', md: '300px' });
+    const side = useBreakpointValue({ base: '10%', sm: '10px', md: '10px' });
 
     return (
         <>
             <Center>
-                {contentData !== undefined && contentData.category == 'legends' &&
-                    <BreadcrumbForLegendsContent
+                {contentData !== undefined && contentData.category == 'adventure' &&
+                    <BreadcrumbForAdventureBookContent
                         currentPage={contentData.name} />}
-                {contentData!== undefined && contentData.category == 'fun fact' &&
-                    <BreadcrumbForFunFactContent
+                {contentData !== undefined && contentData.category == 'nature' &&
+                    <BreadcrumbForNatureBookContent
                         currentPage={contentData.name} />}
             </Center>
             <Center mt={8}>
                 <Stack direction='column' >
                     <Center >
-                        <Text fontSize='3xl' as='h2' mb={5}>{contentData?.name}</Text>
+                        <Text fontSize='3xl' as='h4' mb={5}>{contentData?.name}</Text>
                     </Center>
                     <Box
                         position={'relative'}
-                        height={'full'}
-                        width={'800px'}
+                        maxH='full'
+                        maxW='4xl'
                         overflow={'hidden'}>
                         {/* CSS files for react-slick */}
                         <link
@@ -117,10 +117,11 @@ const BookContent = () => {
                         <Slider {...settings} ref={(slider) => setSlider(slider)}>
                             {contentData?.content.map(({ imageURL, description }, index) => (
                                 <>
-                                    <Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' />
+                                    <Center><Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' /></Center>
                                     <Stack direction='column'>
-                                        <Text fontSize='sm'>Halaman {index + 1} dari {contentData?.content.length}</Text>
-                                        <Text fontSize='xl'>{description}</Text>
+                                        <Box><Center><Text fontSize='sm'>Halaman {index + 1} dari {contentData?.content.length}</Text></Center>
+                                            <Text mt={2} textAlign={['left', 'center']} fontSize='xl' >{description}</Text>
+                                        </Box>
                                     </Stack>
                                 </>
                             ))}

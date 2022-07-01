@@ -5,8 +5,8 @@ import Read from "../pages/read";
 import Learn from "../pages/learn";
 import Quiz from "../pages/quiz";
 import Watch from "../pages/watch";
-import Legends from "../component/legends";
-import FunFact from "../component/funFact"
+import AdventureBooks from "../component/adventure";
+import NatureBooks from "../component/nature"
 import Vocab from '../component/mainVocab';
 import VocabContent from "../component/vocabItems/content";
 import BookContent from "../component/books/content";
@@ -20,12 +20,12 @@ const AppRouter = () => {
                     <Route index element={<Home />} />
                     <Route path="read">
                         <Route index element={<Read />} />
-                        <Route path="legends">
-                            <Route index element={<Legends />} />
+                        <Route path="adventure">
+                            <Route index element={<AdventureBooks />} />
                             <Route path=":id" element={<BookContent />} />
                         </Route>
-                        <Route path="fun-fact">
-                            <Route index element={<FunFact />} />
+                        <Route path="nature">
+                            <Route index element={<NatureBooks />} />
                             <Route path=":id" element={<BookContent />} />
                         </Route>
                     </Route>
@@ -35,7 +35,7 @@ const AppRouter = () => {
                             <Route index element={<Vocab />} />
                             <Route path=":id" element={<VocabContent />} />
                         </Route>
-                        <Route path="vocabs" element={<FunFact />} />
+                        <Route path="vocabs" element={<NatureBooks />} />
                     </Route>
                     <Route path="watch" element={<Watch />} />
                     <Route path="quiz" element={<Quiz />} />

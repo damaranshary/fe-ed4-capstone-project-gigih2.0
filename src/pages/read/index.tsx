@@ -1,7 +1,7 @@
 import { Center } from '@chakra-ui/react';
 import { BreadcrumbForReadPage } from '../../component/breadcrumb';
-import FunFactComponent from '../../component/funFact';
-import LegendsComponent from '../../component/legends'
+import NatureBooksComponent from '../../component/nature';
+import AdventureBooksComponent from '../../component/adventure'
 
 const Read = () => {
     return (
@@ -10,8 +10,8 @@ const Read = () => {
                 <BreadcrumbForReadPage
                     currentPage={'Read'} />
             </Center>
-            <LegendsComponent />
-            <FunFactComponent />
+            <AdventureBooksComponent />
+            <NatureBooksComponent />
         </div>
 
     )

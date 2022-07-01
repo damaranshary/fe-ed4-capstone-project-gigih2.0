@@ -3,7 +3,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { BreadcrumbProps } from '../../types/types';
 
-export const BreadcrumbForLegendsContent = ({ currentPage }: BreadcrumbProps) => {
+export const BreadcrumbForAdventureBookContent = ({ currentPage }: BreadcrumbProps) => {
     return (
         <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
             <BreadcrumbItem>
@@ -13,7 +13,7 @@ export const BreadcrumbForLegendsContent = ({ currentPage }: BreadcrumbProps) =>
                 <BreadcrumbLink as={ReactRouterLink} to='/read'>Read</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-                <BreadcrumbLink as={ReactRouterLink} to='/read/legends'>Legends</BreadcrumbLink>
+                <BreadcrumbLink as={ReactRouterLink} to='/read/adventure'>Petualangan</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem isCurrentPage>
                 <BreadcrumbLink>{currentPage}</BreadcrumbLink>
@@ -22,7 +22,7 @@ export const BreadcrumbForLegendsContent = ({ currentPage }: BreadcrumbProps) =>
     )
 }
 
-export const BreadcrumbForFunFactContent = ({ currentPage }: BreadcrumbProps) => {
+export const BreadcrumbForNatureBookContent = ({ currentPage }: BreadcrumbProps) => {
     return (
         <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
             <BreadcrumbItem>
@@ -32,7 +32,7 @@ export const BreadcrumbForFunFactContent = ({ currentPage }: BreadcrumbProps) =>
                 <BreadcrumbLink as={ReactRouterLink} to='/read'>Read</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-                <BreadcrumbLink as={ReactRouterLink} to='/fun-fact'>FunFact</BreadcrumbLink>
+                <BreadcrumbLink as={ReactRouterLink} to='/nature'>Alam</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem isCurrentPage>
                 <BreadcrumbLink>{currentPage}</BreadcrumbLink>

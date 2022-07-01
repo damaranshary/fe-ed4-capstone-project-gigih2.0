@@ -18,16 +18,21 @@ const Books = ({ coverImageURL, name, id, category, description, author }: Books
     return (
         <Flex p={2} maxW="6xl" alignItems="center" justifyContent="center" mt={8}>
             <Box
-                maxW="xl"
+                maxW="2xl"
+                maxH="6xl"
                 borderWidth="1px"
                 rounded="lg"
                 shadow="lg"
                 position="relative">
-                <Image
-                    src={coverImageURL}
-                    alt={`Picture of ${name}`}
-                    roundedTop="lg"
-                />
+                <Center>
+                    <Image
+                        src={coverImageURL}
+                        alt={`Picture of ${name}`}
+                        rounded="lg"
+                        maxH='150px'
+                        mt={3}
+                    />
+                </Center>
                 <Box p="6">
                     <Center w='full'>
                         <Flex mt="1" justifyContent="space-between" flexDirection="column" alignContent="center">
@@ -39,7 +44,7 @@ const Books = ({ coverImageURL, name, id, category, description, author }: Books
                             >
                                 <Heading size='md'>{name}</Heading>
                                 <Text color='gray.500' fontSize='sm' mt={1}>{author}</Text>
-                                <Text fontSize='xs' mt={2}>{description}</Text>
+                                <Text fontSize='xs' mt={2} noOfLines={[1, 2, 3]}>{description}</Text>
                             </Box>
                             <Center>
                                 <Link as={ReactRouterLink} to={linkToDescription}>
@@ -61,7 +66,7 @@ const Books = ({ coverImageURL, name, id, category, description, author }: Books
                                         _focus={{
                                             bg: 'blue.500',
                                         }}>
-                                        Read
+                                        Baca
                                     </Button>
                                 </Link>
                             </Center>
