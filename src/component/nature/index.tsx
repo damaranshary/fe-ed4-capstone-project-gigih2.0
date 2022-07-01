@@ -8,7 +8,7 @@ import { setNatureBooksData } from "../../redux/slices/natureBooksSlice";
 import { fetcherBooksData } from "../../api-call/fetchJSONData";
 
 const NatureBooksComponent = () => {
-    const natureBooks = ['/data/book/N001.json', '/data/book/N002.json', '/data/book/N003.json', '/data/book/N004.json', '/data/book/N005.json']
+    const natureBooks = ['/data/book/N001.json', '/data/book/N002.json', '/data/book/N003.json', '/data/book/N004.json', '/data/book/N005.json', 'data/book/N006.json']
     const natureBooksData = useAppSelector((state: RootState) => state.natureBooks.value)
     const dispatch = useAppDispatch();
 

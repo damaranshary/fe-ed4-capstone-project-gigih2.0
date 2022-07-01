@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 
 const AdventureBooksComponent = () => {
-    const adventuresBook = ['/data/book/A001.json', '/data/book/A002.json', '/data/book/A003.json', '/data/book/A004.json']
+    const adventuresBook = ['/data/book/A001.json', '/data/book/A002.json', '/data/book/A003.json', '/data/book/A004.json', '/data/book/A005.json', '/data/book/A006.json', '/data/book/A007.json']
     const adventureBookData = useAppSelector((state: RootState) => state.adventureBooks.value);
     const dispatch = useAppDispatch();
 
