@@ -1,12 +1,9 @@
-import { Button, Container, Center, Image, Box, IconButton, useBreakpointValue, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
+import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
-import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Link as ReactRouterLink } from 'react-router-dom'
-import vocabsData from '../../../data/vocabOne';
 import axios from 'axios';
 import { VocabsDataProps } from '../../../types/types';
 import { BreadcrumbForVocabContent } from '../../breadcrumb';

@@ -1,10 +1,8 @@
-import { Container, SimpleGrid, Heading, Link, Box, Button } from "@chakra-ui/react";
-import { Link as ReactRouterLink } from "react-router-dom";
+import { Container, SimpleGrid, Heading } from "@chakra-ui/react";
 import Books from '../books';
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { fetcherBooksData } from "../../api-call/fetchJSONData";
-import { BooksComponentProps, BooksDataProps } from "../../types/types";
+import { BooksComponentProps } from "../../types/types";
 import { setAdventureBooksData } from "../../redux/slices/adventureBooksSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
@@ -14,10 +12,10 @@ const AdventureBooksComponent = ({ booksList }: BooksComponentProps) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        adventureBookData !== undefined && setLegendsDataToState();
+        adventureBookData !== undefined && setAdventureBooksDataToState();
     }, [])
 
-    const setLegendsDataToState = async () => {
+    const setAdventureBooksDataToState = async () => {
         booksList!== undefined && Promise.all(fetcherBooksData(booksList)).then((item) => {
             dispatch(setAdventureBooksData(item));
         })

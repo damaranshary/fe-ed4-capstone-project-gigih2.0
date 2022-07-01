@@ -1,4 +1,4 @@
-import { Button, Container, Center, Image, Box, IconButton, useBreakpointValue, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
+import {  Center, Image, Box, IconButton, useBreakpointValue, Text, Stack } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
@@ -55,10 +55,10 @@ const BookContent = () => {
     return (
         <>
             <Center>
-                {contentData !== undefined && contentData.category == 'adventure' &&
+                {contentData !== undefined && contentData.category === 'adventure' &&
                     <BreadcrumbForAdventureBookContent
                         currentPage={contentData.name} />}
-                {contentData !== undefined && contentData.category == 'nature' &&
+                {contentData !== undefined && contentData.category === 'nature' &&
                     <BreadcrumbForNatureBookContent
                         currentPage={contentData.name} />}
             </Center>

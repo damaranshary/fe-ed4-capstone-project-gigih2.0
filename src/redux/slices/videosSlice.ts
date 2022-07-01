@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { BooksDataProps, VideoDataProps } from "../../types/types";
+import { VideoDataProps } from "../../types/types";
 
 export const videosSlice = createSlice({
     name: "video",

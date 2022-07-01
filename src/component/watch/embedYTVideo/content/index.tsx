@@ -14,7 +14,7 @@ const EmbedYoutubeVideoContent = () => {
     const videoID = params?.id;
 
     useEffect(() => {
-        getVideoContentFromID();
+        videoID!== undefined && getVideoContentFromID();
     }, [])
 
     const fetchVideoContentFromID = async (): Promise<VideoDataProps> => { //will run this if there is no data in redux state

@@ -1,8 +1,6 @@
-import { Center, SimpleGrid, Heading, Link, Box, VStack, Container, Flex, Image, Text, Button } from "@chakra-ui/react";
+import { SimpleGrid, Heading, Link, VStack, Container } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { VideoDataProps } from "../../types/types";
+import { useEffect } from "react";
 import EmbedYoutubeVideo from "./embedYTVideo";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";

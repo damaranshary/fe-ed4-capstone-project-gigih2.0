@@ -1,4 +1,4 @@
-import { Breadcrumb, Center, Container } from "@chakra-ui/react";
+import { Center, Container } from "@chakra-ui/react";
 import AdventureBooksComponent from "../../../component/adventure";
 import { BreadcrumbForAdventurePage } from "../../../component/breadcrumb";
 
