@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../component/navbar";
+import Footer from "../component/footer";
 import Home from "../pages/home/index";
 import Read from "../pages/read";
 import Learn from "../pages/learn";
@@ -45,6 +46,7 @@ const AppRouter = () => {
                     <Route path="*" element={<div>nothing here code:404</div>}></Route>
                 </Route>
             </Routes>
+            <Footer />
         </Router>
     )
 }
