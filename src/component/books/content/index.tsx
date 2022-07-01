@@ -37,7 +37,7 @@ const BookContent = () => {
     const fetchBookContentFromID = async (): Promise<BooksDataProps> => { //will run this if there is no data in redux state
         const data: any =
             await axios
-                .get(`/data/${bookID}.json`)
+                .get(`/data/book/${bookID}.json`)
                 .catch(err => console.log(err));
         return data.data;
     }
