@@ -11,7 +11,7 @@ import {
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { VocabsDataProps } from '../../types/types';
 
-const Vocabs = ({ coverImageURL, name, id, category, description }: VocabsDataProps) => {
+const Vocabs = ({ coverImageURL, name, id, category, description}: VocabsDataProps) => {
     const linkToDescription = `/learn/${category}/${id}`
     return (
         <Flex p={2} maxW="6xl" alignItems="center" justifyContent="center" mt={8}>

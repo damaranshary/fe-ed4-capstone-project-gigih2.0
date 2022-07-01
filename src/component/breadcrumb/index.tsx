@@ -117,4 +117,3 @@ export const BreadcrumbForVocabContent = ({ currentPage }: BreadcrumbProps) => {
         </Breadcrumb>
     )
 }
-

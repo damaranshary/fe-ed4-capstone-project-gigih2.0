@@ -32,7 +32,7 @@ const Vocab = () => {
 
     return (
         <Container maxW='6xl' centerContent>
-            <Link as={ReactRouterLink} to='/learn/mainVocab'><Heading>Vocabulary</Heading></Link>
+            <Link as={ReactRouterLink} to='/learn/vocabs'><Heading>Vocabulary</Heading></Link>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="1">
                 {vocabsData !== undefined && vocabsData.map((item) =>
                     <Vocabs
