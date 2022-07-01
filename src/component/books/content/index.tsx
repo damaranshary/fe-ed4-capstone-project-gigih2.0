@@ -4,9 +4,6 @@ import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
-import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Link as ReactRouterLink } from 'react-router-dom'
-import legendsData from '../../../data/legends';
 import axios from 'axios';
 import { BooksDataProps } from '../../../types/types';
 import { BreadcrumbForAdventureBookContent, BreadcrumbForNatureBookContent } from '../../breadcrumb';
@@ -68,7 +65,7 @@ const BookContent = () => {
             <Center mt={8}>
                 <Stack direction='column' >
                     <Center >
-                        <Text fontSize='3xl' as='h4' mb={5}>{contentData?.name}</Text>
+                        <Text fontSize='3xl' as='h2' mb={5}>{contentData?.name}</Text>
                     </Center>
                     <Box
                         position={'relative'}

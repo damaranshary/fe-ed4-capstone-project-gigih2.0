@@ -6,10 +6,10 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import { setNatureBooksData } from "../../redux/slices/natureBooksSlice";
 import { fetcherBooksData } from "../../api-call/fetchJSONData";
+import { BooksComponentProps } from "../../types/types";
 
-const NatureBooksComponent = () => {
-    const natureBooks = ['/data/book/N001.json', '/data/book/N002.json', '/data/book/N003.json', '/data/book/N004.json', '/data/book/N005.json', 'data/book/N006.json']
-    const natureBooksData = useAppSelector((state: RootState) => state.natureBooks.value)
+const NatureBooksComponent = ({ booksList }: BooksComponentProps) => {
+    const natureBooksData = useAppSelector((state: RootState) => state.natureBooks.value);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -17,14 +17,14 @@ const NatureBooksComponent = () => {
     }, [])
 
     const setFunFactsDataToState = async () => {
-        Promise.all(fetcherBooksData(natureBooks)).then((item) => {
+        booksList !== undefined && Promise.all(fetcherBooksData(booksList)).then((item) => {
             dispatch(setNatureBooksData(item));
         })
     }
 
     return (
-        <Container maxW='6xl' centerContent>
-            <Link as={ReactRouterLink} to={`/read/nature`}><Heading>Alam</Heading></Link>
+        <Container maxW='6xl'>
+            <Heading mt={4}>Alam</Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="6">
                 {natureBooksData !== undefined && natureBooksData.map((item) => {
                     return (
@@ -33,13 +33,13 @@ const NatureBooksComponent = () => {
                             content={item.content}
                             name={item.name}
                             id={item.id}
+                            key={item.id}
                             category={item.category}
                             description={item.description}
                             author={item.author} />
                     )
                 })}
             </SimpleGrid>
-
         </Container>
 
     )

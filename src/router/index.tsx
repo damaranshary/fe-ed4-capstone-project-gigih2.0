@@ -5,8 +5,8 @@ import Read from "../pages/read";
 import Learn from "../pages/learn";
 import Quiz from "../pages/quiz";
 import Watch from "../pages/watch";
-import AdventureBooks from "../component/adventure";
-import NatureBooks from "../component/nature"
+import Adventure from "../pages/read/adventure";
+import Nature from "../pages/read/nature";
 import Vocab from '../component/mainVocab';
 import VocabContent from "../component/vocabItems/content";
 import BookContent from "../component/books/content";
@@ -21,11 +21,11 @@ const AppRouter = () => {
                     <Route path="read">
                         <Route index element={<Read />} />
                         <Route path="adventure">
-                            <Route index element={<AdventureBooks />} />
+                            <Route index element={<Adventure />} />
                             <Route path=":id" element={<BookContent />} />
                         </Route>
                         <Route path="nature">
-                            <Route index element={<NatureBooks />} />
+                            <Route index element={<Nature />} />
                             <Route path=":id" element={<BookContent />} />
                         </Route>
                     </Route>
@@ -35,7 +35,6 @@ const AppRouter = () => {
                             <Route index element={<Vocab />} />
                             <Route path=":id" element={<VocabContent />} />
                         </Route>
-                        <Route path="vocabs" element={<NatureBooks />} />
                     </Route>
                     <Route path="watch" element={<Watch />} />
                     <Route path="quiz" element={<Quiz />} />

@@ -54,7 +54,7 @@ export const BreadcrumbForReadPage = ({ currentPage }: BreadcrumbProps) => {
     )
 }
 
-export const BreadcrumbForReadLegendsPage = ({ currentPage }: BreadcrumbProps) => {
+export const BreadcrumbForAdventurePage = ({ currentPage }: BreadcrumbProps) => {
     return (
         <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
             <BreadcrumbItem>
@@ -70,7 +70,7 @@ export const BreadcrumbForReadLegendsPage = ({ currentPage }: BreadcrumbProps) =
     )
 }
 
-export const BreadcrumbForReadFunFactPage = ({ currentPage }: BreadcrumbProps) => {
+export const BreadcrumbForNaturePage = ({ currentPage }: BreadcrumbProps) => {
     return (
         <Breadcrumb mt={24} separator={<ChevronRightIcon color='gray.500' />}>
             <BreadcrumbItem>
