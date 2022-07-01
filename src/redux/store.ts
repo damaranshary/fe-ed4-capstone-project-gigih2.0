@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import funFactDataSlice from "./slices/funFactDataSlice";
-import legendsDataSlice from "./slices/legendsDataSlice";
+import natureBooksSlice from "./slices/natureBooksSlice";
+import legendsDataSlice from "./slices/adventureBooksSlice";
 
 export const store = configureStore({
     reducer: {
-        funFactData : funFactDataSlice,
-        legendsData : legendsDataSlice
+        natureBooks : natureBooksSlice,
+        adventureBooks : legendsDataSlice
     }
 })
 
