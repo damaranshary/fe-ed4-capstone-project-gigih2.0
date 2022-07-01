@@ -30,7 +30,7 @@ const AppRouter = () => {
                         </Route>
                     </Route>
                     <Route path="learn">
-                        <Route index element={<Vocab />} />
+                        <Route index element={<Learn />} />
                         <Route path="vocabs">
                             <Route index element={<Vocab />} />
                             <Route path=":id" element={<VocabContent />} />
