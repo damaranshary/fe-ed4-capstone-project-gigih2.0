@@ -1,4 +1,4 @@
-import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack, Container, Heading, VStack, Flex, Spacer } from '@chakra-ui/react';
+import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack, Container, Heading, Flex } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'

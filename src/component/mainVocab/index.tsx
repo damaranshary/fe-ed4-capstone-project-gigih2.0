@@ -1,5 +1,4 @@
-import { Container, SimpleGrid, Heading, Link} from "@chakra-ui/react";
-import { Link as ReactRouterLink } from "react-router-dom";
+import { Container, SimpleGrid, Heading} from "@chakra-ui/react";
 import Vocabs from '../vocabItems';
 import axios from "axios";
 import { useEffect, useState } from "react";
