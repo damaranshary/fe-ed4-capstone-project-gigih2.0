@@ -32,7 +32,7 @@ export const BreadcrumbForNatureBookContent = ({ currentPage }: BreadcrumbProps)
                 <BreadcrumbLink as={ReactRouterLink} to='/read'>Read</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-                <BreadcrumbLink as={ReactRouterLink} to='/nature'>Alam</BreadcrumbLink>
+                <BreadcrumbLink as={ReactRouterLink} to='/read/nature'>Alam</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem isCurrentPage>
                 <BreadcrumbLink>{currentPage}</BreadcrumbLink>
