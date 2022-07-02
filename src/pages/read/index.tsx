@@ -3,11 +3,13 @@ import { BreadcrumbForReadPage } from '../../component/breadcrumb';
 import NatureBooksComponent from '../../component/nature';
 import AdventureBooksComponent from '../../component/adventure'
 import { Link as ReactRouterLink } from 'react-router-dom';
+import { useAppSelector } from '../../redux/hooks';
+import { RootState } from '../../redux/store';
 
 const Read = () => {
-    const natureBooks = ['/data/book/N001.json', '/data/book/N002.json', '/data/book/N003.json', '/data/book/N004.json', '/data/book/N005.json', 'data/book/N006.json'];
+    const natureBooks = useAppSelector((state: RootState) => state.natureBooks.jsonData.json)
     const natureBooksWithSlice = natureBooks.slice(0, 3);
-    const adventureBooks = ['/data/book/A001.json', '/data/book/A002.json', '/data/book/A003.json', '/data/book/A004.json', '/data/book/A005.json', '/data/book/A006.json', '/data/book/A007.json'];
+    const adventureBooks = useAppSelector((state: RootState) => state.adventureBooks.jsonData.json)
     const adventureBooksWithSlice = adventureBooks.slice(0, 3);
 
     return (
