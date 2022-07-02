@@ -21,8 +21,6 @@ const NatureBooksComponent = ({ booksList }: BooksComponentProps) => {
         // eslint-disable-next-line 
     }, [])
 
-
-
     return (
         <Container maxW='6xl'>
             <Heading mt={4}>Alam</Heading>

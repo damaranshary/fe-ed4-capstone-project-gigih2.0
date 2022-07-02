@@ -1,16 +1,16 @@
 import Vocab from '../../component/mainVocab';
-import { Center } from '@chakra-ui/react';
+import { Center, Container } from '@chakra-ui/react';
 import { BreadcrumbForLearnPage } from '../../component/breadcrumb';
 
 const Learn = () => {
   return (
-      <div>
+      <Container minH='90vh' maxW='6xl' mb={10}>
         <Center>
           <BreadcrumbForLearnPage
           currentPage={'Learn'} />
         </Center>
         <Vocab/>
-      </div>
+      </Container>
   )
 }
 

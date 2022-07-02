@@ -59,7 +59,7 @@ const Quiz = () => {
     }
   };
   return (
-    <Container mt={24} centerContent>
+    <Container minH='90vh' maxW='100vh' mb={10}mt={24} centerContent>
       <div className="app">
         {showScore ? (
           <div className="score-section">
