@@ -1,16 +1,13 @@
-import { Button, Container, Center, Image, Box, IconButton, useBreakpointValue, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
+import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Slider from 'react-slick'
+import Slider from 'react-slick';
 // Here we have used react-icons package for the icons
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
-import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Link as ReactRouterLink } from 'react-router-dom'
-import vocabsData from '../../../data/vocabOne';
+import { AiOutlineDoubleRight, AiOutlineDoubleLeft} from 'react-icons/ai'
 import axios from 'axios';
 import { VocabsDataProps } from '../../../types/types';
 import { BreadcrumbForVocabContent } from '../../breadcrumb';
-import { Wrap, WrapItem} from '@chakra-ui/react'
+import { Wrap, WrapItem} from '@chakra-ui/react';
 
 
 const VocabContent = () => {
@@ -52,9 +49,6 @@ const VocabContent = () => {
                 {data !== undefined && data.category === 'vocabs' &&
                     <BreadcrumbForVocabContent
                         currentPage={data.name} />}
-                {data !== undefined && data.category === 'funfact' &&
-                    <BreadcrumbForVocabContent
-                        currentPage={data.name} />}
             </Center>
             <Center mt={8}>
                 <Stack direction='column'>
@@ -89,7 +83,7 @@ const VocabContent = () => {
                             transform={'translate(0%, -50%)'}
                             zIndex={2}
                             onClick={() => slider?.slickPrev()}>
-                            <BiLeftArrowAlt />
+                            <AiOutlineDoubleLeft />
                         </IconButton>
                         {/* Right Icon */}
                         <IconButton
@@ -102,11 +96,11 @@ const VocabContent = () => {
                             transform={'translate(0%, -50%)'}
                             zIndex={2}
                             onClick={() => slider?.slickNext()}>
-                            <BiRightArrowAlt />
+                            <AiOutlineDoubleRight />
                         </IconButton>
                         {/* Slider */}
                         <Slider {...settings} ref={(slider) => setSlider(slider)}>
-                            {data?.content.map(({ imageURL, description }, index) => (
+                            {data?.content.map(({ imageURL}, index) => (
                                 <>
                                     <Wrap spacing='30px' justify='center' className="vocab">
                                         <WrapItem>
@@ -123,7 +117,6 @@ const VocabContent = () => {
             </Center>
         </>
     );
-
 }
 
 export default VocabContent;
