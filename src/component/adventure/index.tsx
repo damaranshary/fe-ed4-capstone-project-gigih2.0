@@ -12,14 +12,15 @@ const AdventureBooksComponent = ({ booksList }: BooksComponentProps) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
+        const setAdventureBooksDataToState = async () => {
+            booksList!== undefined && Promise.all(fetcherBooksData(booksList)).then((item) => {
+                dispatch(setAdventureBooksData(item));
+            })
+        }
         adventureBookData !== undefined && setAdventureBooksDataToState();
+        // eslint-disable-next-line 
     }, [])
 
-    const setAdventureBooksDataToState = async () => {
-        booksList!== undefined && Promise.all(fetcherBooksData(booksList)).then((item) => {
-            dispatch(setAdventureBooksData(item));
-        })
-    }
 
     return (
         <Container maxW='6xl'>

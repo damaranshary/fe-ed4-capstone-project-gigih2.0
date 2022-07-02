@@ -28,6 +28,7 @@ const VocabContent = () => {
 
     useEffect(() => {
         getVocabContentFromID().then((res) => setData(res));
+        // eslint-disable-next-line
     }, [])
 
     const getVocabContentFromID = async (): Promise<VocabsDataProps> => {

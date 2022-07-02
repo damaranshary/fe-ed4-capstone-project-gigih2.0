@@ -21,3 +21,19 @@ const fetchVideosData = async (pathURL: string): Promise<VideoDataProps> => {
 }
 
 export const fetcherVideosData = (videosData: string[]) => videosData.map(video => fetchVideosData(video));
+
+export const fetchBookContentFromID = async (bookID: string | undefined): Promise<BooksDataProps> => { //will run this if there is no data in redux state
+    const data: any =
+        await axios
+            .get(`/data/book/${bookID}.json`)
+            .catch(err => console.log(err));
+    return data.data;
+}
+
+export const fetchVideoContentFromID = async (videoID: string | undefined): Promise<VideoDataProps> => { //will run this if there is no data in redux state
+    const data: any =
+        await axios
+            .get(`/data/video/${videoID}.json`)
+            .catch(err => console.log(err));
+    return data.data;
+}

@@ -38,3 +38,7 @@ export interface VideoDataProps {
 export interface BooksComponentProps {
     booksList: string[]
 }
+
+export interface WatchComponentProps {
+    videosJSONData: string[]
+}

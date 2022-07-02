@@ -12,14 +12,16 @@ const NatureBooksComponent = ({ booksList }: BooksComponentProps) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        natureBooksData !== undefined && setFunFactsDataToState();
+        const setNatureBooksDataToState = async () => {
+            booksList !== undefined && Promise.all(fetcherBooksData(booksList)).then((item) => {
+                dispatch(setNatureBooksData(item));
+            })
+        }
+        natureBooksData !== undefined && setNatureBooksDataToState();
+        // eslint-disable-next-line 
     }, [])
 
-    const setFunFactsDataToState = async () => {
-        booksList !== undefined && Promise.all(fetcherBooksData(booksList)).then((item) => {
-            dispatch(setNatureBooksData(item));
-        })
-    }
+
 
     return (
         <Container maxW='6xl'>

@@ -5,23 +5,22 @@ import EmbedYoutubeVideo from "./embedYTVideo";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import { setVideosData } from "../../redux/slices/videosSlice";
-
 import { fetcherVideosData } from "../../api-call/fetchJSONData";
+import { WatchComponentProps } from "../../types/types";
 
-const WatchComponent = () => {
-    const videosJSONData = ['/data/video/YT001.json']
+const WatchComponent = ({ videosJSONData }: WatchComponentProps) => {
     const videosData = useAppSelector((state: RootState) => state.videos.value);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        setVideosDataToState();
+        const setVideosDataToState = async () => {
+            Promise.all(fetcherVideosData(videosJSONData)).then((item) => {
+                dispatch(setVideosData(item));
+            })
+        }
+        videosData !== undefined && setVideosDataToState();
+        // eslint-disable-next-line 
     }, [])
-
-    const setVideosDataToState = async () => {
-        Promise.all(fetcherVideosData(videosJSONData)).then((item) => {
-            dispatch(setVideosData(item));
-        })
-    }
 
     return (
         <Container maxW={48}>

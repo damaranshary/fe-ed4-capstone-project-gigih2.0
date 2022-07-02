@@ -2,33 +2,25 @@ import { VideoDataProps } from "../../../../types/types";
 import { Center } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useAppSelector } from "../../../../redux/hooks";
 import { RootState } from "../../../../redux/store";
 import { BreadcrumbForWatchContent } from "../../../breadcrumb";
+import { fetchVideoContentFromID } from "../../../../api-call/fetchJSONData";
 
 const EmbedYoutubeVideoContent = () => {
     const videosData = useAppSelector((state: RootState) => state.videos.value);
     const [videoContentData, setVideoContentData] = useState<VideoDataProps>();
     const params = useParams();
     const videoID = params?.id;
-
+    
     useEffect(() => {
-        videoID!== undefined && getVideoContentFromID();
+        const getVideoContentFromID = () => {
+            const filteredVideoContentData = videosData.filter(content => content.id === videoID);
+            filteredVideoContentData !== undefined ? setVideoContentData(filteredVideoContentData[0]) : fetchVideoContentFromID(videoID).then(res => setVideoContentData(res));
+        }
+        videoID !== undefined && getVideoContentFromID();
+    // eslint-disable-next-line 
     }, [])
-
-    const fetchVideoContentFromID = async (): Promise<VideoDataProps> => { //will run this if there is no data in redux state
-        const data: any =
-            await axios
-                .get(`/data/video/${videoID}.json`)
-                .catch(err => console.log(err));
-        return data.data;
-    }
-
-    const getVideoContentFromID = () => {
-        const filteredVideoContentData = videosData.filter(content => content.id === videoID);
-        filteredVideoContentData !== undefined ? setVideoContentData(filteredVideoContentData[0]) : fetchVideoContentFromID().then(res => setVideoContentData(res));
-    }
 
     return (
         <>
