@@ -1,5 +1,5 @@
 import { VideoDataProps } from "../../../../types/types";
-import { Center } from "@chakra-ui/react";
+import { Center, Container } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../../../../redux/hooks";
@@ -23,13 +23,13 @@ const EmbedYoutubeVideoContent = () => {
     }, [videoID])
 
     return (
-        <>
+        <Container minH='90vh' maxW='6xl' mb={10}>
             {videoContentData !== undefined &&
                 <Center>
                     <BreadcrumbForWatchContent currentPage={videoContentData.name} />
                 </Center>
             }
-            <Center>
+            <Center mt={10}>
                 <iframe
                     width="1280px"
                     height="720px"
@@ -38,7 +38,7 @@ const EmbedYoutubeVideoContent = () => {
                     allowFullScreen
                 />
             </Center>
-        </>
+        </Container>
     )
 }
 

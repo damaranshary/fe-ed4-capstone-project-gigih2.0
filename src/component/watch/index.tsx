@@ -1,5 +1,4 @@
-import { SimpleGrid, Heading, Link, VStack, Container } from "@chakra-ui/react";
-import { Link as ReactRouterLink } from "react-router-dom";
+import { SimpleGrid, Heading, Center, Container } from "@chakra-ui/react";
 import { useEffect } from "react";
 import EmbedYoutubeVideo from "./embedYTVideo";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -14,8 +13,9 @@ const WatchComponent = ({ videosJSONData }: WatchComponentProps) => {
 
     useEffect(() => {
         const setVideosDataToState = async () => {
-            Promise.all(fetcherVideosData(videosJSONData)).then((item) => {
+            videosJSONData !== undefined && Promise.all(fetcherVideosData(videosJSONData)).then((item) => {
                 dispatch(setVideosData(item));
+                console.log(item);
             })
         }
         videosData !== undefined && setVideosDataToState();
@@ -23,11 +23,11 @@ const WatchComponent = ({ videosJSONData }: WatchComponentProps) => {
     }, [])
 
     return (
-        <Container maxW={48}>
-            <VStack>
-                <Link as={ReactRouterLink} to='/watch'><Heading>Watch</Heading></Link>
-                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="1">
-                    {videosData !== undefined && videosData.map((item) =>
+        <Container maxW='8xl'>
+            <Center mt={4} mb={4}><Heading>Watch</Heading></Center>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="6">
+                {videosData !== undefined && videosData.map((item) => {
+                    return (
                         <EmbedYoutubeVideo
                             coverImageURL={item.coverImageURL}
                             embedVideoURL={item.embedVideoURL}
@@ -36,9 +36,9 @@ const WatchComponent = ({ videosJSONData }: WatchComponentProps) => {
                             author={item.author}
                             description={item.description}
                         />
-                    )}
-                </SimpleGrid>
-            </VStack>
+                    )
+                })}
+            </SimpleGrid>
         </Container>
     )
 }
