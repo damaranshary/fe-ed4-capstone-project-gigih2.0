@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
 // Here we have used react-icons package for the icons
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+import { AiOutlineDoubleRight, AiOutlineDoubleLeft} from 'react-icons/ai'
 import axios from 'axios';
 import { VocabsDataProps } from '../../../types/types';
 import { BreadcrumbForVocabContent } from '../../breadcrumb';
@@ -88,7 +88,7 @@ const VocabContent = () => {
                             transform={'translate(0%, -50%)'}
                             zIndex={2}
                             onClick={() => slider?.slickPrev()}>
-                            <BiLeftArrowAlt />
+                            <AiOutlineDoubleLeft />
                         </IconButton>
                         {/* Right Icon */}
                         <IconButton
@@ -101,7 +101,7 @@ const VocabContent = () => {
                             transform={'translate(0%, -50%)'}
                             zIndex={2}
                             onClick={() => slider?.slickNext()}>
-                            <BiRightArrowAlt />
+                            <AiOutlineDoubleRight />
                         </IconButton>
                         {/* Slider */}
                         <Slider {...settings} ref={(slider) => setSlider(slider)}>
