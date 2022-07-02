@@ -8,6 +8,7 @@ import Quiz from "../pages/quiz";
 import Watch from "../pages/watch";
 import Adventure from "../pages/read/adventure";
 import Nature from "../pages/read/nature";
+import NotFound404 from "../pages/404";
 import Vocab from "../component/mainVocab";
 import VocabContent from "../component/vocabItems/content";
 import BookContent from "../component/books/content";
@@ -38,7 +39,7 @@ const AppRouter = () => {
                         <Route path=":id" element={<EmbedYoutubeVideoContent />} />
                     </Route>
                     <Route path="quiz" element={<Quiz />} />
-                    <Route path="*" element={<div>nothing here code:404</div>}></Route>
+                    <Route path="*" element={<NotFound404 />}></Route>
                 </Route>
             </Routes>
             <Footer />
