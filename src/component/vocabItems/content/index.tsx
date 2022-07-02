@@ -1,4 +1,4 @@
-import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack } from '@chakra-ui/react';
+import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack, Container } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
@@ -25,9 +25,10 @@ const VocabContent = () => {
     const params = useParams();
     const vocabID = params?.id;
     const [data, setData] = useState<VocabsDataProps>();
+    const vocabsDaily = ['V001', 'V002', 'V003'];
 
     useEffect(() => {
-        getVocabContentFromID().then((res) => setData(res));
+        vocabsDaily.includes(vocabID!) && getVocabContentFromID().then((res) => setData(res));
         // eslint-disable-next-line
     }, [])
 
@@ -45,7 +46,7 @@ const VocabContent = () => {
     const side = useBreakpointValue({ base: '30%', md: '10px' });
 
     return (
-        <>
+        <Container minH='90vh' maxW='100vh' mb={10}>
             <Center>
                 {data !== undefined && data.category === 'vocabs' &&
                     <BreadcrumbForVocabContent
@@ -119,7 +120,7 @@ const VocabContent = () => {
                     </Box>
                 </Stack>
             </Center>
-        </>
+        </Container>
     );
 
 }

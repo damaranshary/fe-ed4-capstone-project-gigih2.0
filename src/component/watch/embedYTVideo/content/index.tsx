@@ -16,11 +16,11 @@ const EmbedYoutubeVideoContent = () => {
     useEffect(() => {
         const getVideoContentFromID = () => {
             const filteredVideoContentData = videosData.filter(content => content.id === videoID);
-            filteredVideoContentData !== undefined ? setVideoContentData(filteredVideoContentData[0]) : fetchVideoContentFromID(videoID).then(res => setVideoContentData(res));
+            filteredVideoContentData.length !== 0 ? setVideoContentData(filteredVideoContentData[0]) : fetchVideoContentFromID(videoID).then(res => setVideoContentData(res));
         }
         videoID !== undefined && getVideoContentFromID();
     // eslint-disable-next-line 
-    }, [])
+    }, [videoID])
 
     return (
         <>
