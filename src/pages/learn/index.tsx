@@ -4,13 +4,15 @@ import { BreadcrumbForLearnPage } from '../../component/breadcrumb';
 
 const Learn = () => {
   return (
-      <Container minH='90vh' maxW='6xl' mb={10}>
-        <Center>
-          <BreadcrumbForLearnPage
+    <>
+      <Center>
+        <BreadcrumbForLearnPage
           currentPage={'Learn'} />
-        </Center>
-        <Vocab/>
+      </Center>
+      <Container minH='90vh' maxW='6xl'>
+        <Vocab />
       </Container>
+    </>
   )
 }
 

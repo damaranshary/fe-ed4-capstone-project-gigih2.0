@@ -139,7 +139,7 @@ export const BreadcrumbForVocabContent = ({ currentPage }: BreadcrumbProps) => {
                 <BreadcrumbLink as={ReactRouterLink} to='/learn'>Learn</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-                <BreadcrumbLink as={ReactRouterLink} to='/learn/vocabs'>Vocabulary</BreadcrumbLink>
+                <BreadcrumbLink as={ReactRouterLink} to='/learn'>Vocabulary</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem isCurrentPage>
                 <BreadcrumbLink>{currentPage}</BreadcrumbLink>

@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
 // Here we have used react-icons package for the icons
-import { AiOutlineDoubleRight, AiOutlineDoubleLeft} from 'react-icons/ai'
+import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from 'react-icons/ai'
 import axios from 'axios';
 import { VocabsDataProps } from '../../../types/types';
 import { BreadcrumbForVocabContent } from '../../breadcrumb';
-import { Wrap, WrapItem} from '@chakra-ui/react'
+import { Wrap, WrapItem } from '@chakra-ui/react'
 
 
 const VocabContent = () => {
@@ -105,16 +105,15 @@ const VocabContent = () => {
                         </IconButton>
                         {/* Slider */}
                         <Slider {...settings} ref={(slider) => setSlider(slider)}>
-                            {data?.content.map(({ imageURL, description }, index) => (
-                                <>
-                                    <Wrap spacing='30px' justify='center' className="vocab">
-                                        <WrapItem>
-                                            <Center>
-                                            <Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' width="300px"/>
-                                            </Center>
-                                        </WrapItem>
-                                    </Wrap>
-                                </>
+                            {data?.content.map(({ imageURL }, index) => (
+                                <Wrap spacing='30px' justify='center' className="vocab" key={index}>
+                                    <WrapItem>
+                                        <Center>
+                                            <Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' width="300px" />
+                                        </Center>
+                                    </WrapItem>
+                                </Wrap>
+
                             ))}
                         </Slider>
                     </Box>

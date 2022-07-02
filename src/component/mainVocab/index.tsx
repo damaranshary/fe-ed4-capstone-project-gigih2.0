@@ -31,14 +31,15 @@ const Vocab = () => {
     const fetcher = vocabsDaily.map(vocab => fetchVocabsData(vocab))
 
     return (
-        <Container maxW='6xl' centerContent>
-            <Link as={ReactRouterLink} to='/learn/vocabs'><Heading>Vocabulary</Heading></Link>
+        <Container maxW='6xl' minH='85vh' centerContent>
+            <Heading mt={4}>Vocabulary</Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="1">
                 {vocabsData !== undefined && vocabsData.map((item) =>
                     <Vocabs
                         coverImageURL={item.coverImageURL}
                         name={item.name}
                         id={item.id}
+                        key={item.id}
                         description={item.description}
                         category={item.category}
                         content={item.content}

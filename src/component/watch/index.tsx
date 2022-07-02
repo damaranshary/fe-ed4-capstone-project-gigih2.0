@@ -15,7 +15,6 @@ const WatchComponent = ({ videosJSONData }: WatchComponentProps) => {
         const setVideosDataToState = async () => {
             videosJSONData !== undefined && Promise.all(fetcherVideosData(videosJSONData)).then((item) => {
                 dispatch(setVideosData(item));
-                console.log(item);
             })
         }
         videosData !== undefined && setVideosDataToState();
@@ -33,6 +32,7 @@ const WatchComponent = ({ videosJSONData }: WatchComponentProps) => {
                             embedVideoURL={item.embedVideoURL}
                             name={item.name}
                             id={item.id}
+                            key={item.id}
                             author={item.author}
                             description={item.description}
                         />

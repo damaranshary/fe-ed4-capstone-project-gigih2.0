@@ -1,4 +1,4 @@
-import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack, Container } from '@chakra-ui/react';
+import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack, Container, Heading, VStack, Flex, Spacer } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
@@ -42,7 +42,7 @@ const BookContent = () => {
             else {
                 if (mergedID.includes(bookID!)) {
                     fetchBookContentFromID(bookID).then(res => setContentData(res));
-                } 
+                }
                 else {
                     return (
                         <Center mt={24}><Text size='xl'>Konten Tidak Ditemukan</Text></Center>
@@ -71,9 +71,14 @@ const BookContent = () => {
             </Center>
             <Center mt={8}>
                 <Stack direction='column' >
-                    <Center >
-                        <Text fontSize='3xl' as='h2' mb={5}>{contentData?.name}</Text>
-                    </Center>
+                    <Flex flexDirection='column'  mb={6}>
+                        <Center>
+                            <Heading fontSize='3xl' as='h2' mb={2}>{contentData?.name}</Heading>
+                        </Center>
+                        <Center>
+                            <Text color='gray.600'>Karya {contentData?.author}</Text>
+                        </Center>
+                    </Flex>
                     <Box
                         position={'relative'}
                         maxH='full'
@@ -120,16 +125,15 @@ const BookContent = () => {
                         {/* Slider */}
                         <Slider {...settings} ref={(slider) => setSlider(slider)}>
                             {contentData?.content.map(({ imageURL, description }, index) => (
-                                <>
+                                <Container maxW='8xl' key={index}>
                                     <Center><Image src={imageURL} alt={imageURL} mb={4} borderRadius='xl' /></Center>
                                     <Stack direction='column'>
                                         <Box><Center><Text fontSize='sm'>Halaman {index + 1} dari {contentData?.content.length}</Text></Center>
                                             <Text mt={2} textAlign={['left', 'center']} fontSize='xl' >{description}</Text>
                                         </Box>
                                     </Stack>
-                                </>
+                                </Container>
                             ))}
-
                         </Slider>
                     </Box>
                 </Stack>

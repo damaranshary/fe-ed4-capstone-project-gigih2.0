@@ -20,7 +20,7 @@ const Read = () => {
 
             </Center>
             <Center>
-                <Heading size='2xl' as='h1' mt={2} mb={8}>Semua Kategori</Heading>
+                <Heading size='2xl' as='h1' mt={4} mb={8}>Semua Kategori</Heading>
             </Center>
             <AdventureBooksComponent booksList={adventureBooksWithSlice} />
             <Center>

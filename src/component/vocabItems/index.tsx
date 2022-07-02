@@ -28,6 +28,7 @@ const Vocabs = ({ coverImageURL, name, id, category, description}: VocabsDataPro
                     width="200px"
                     marginStart='auto'
                     marginEnd='auto'
+                    mt={4}
                 />
                 <Box p="6">
                     <Center w='full'>
@@ -35,7 +36,6 @@ const Vocabs = ({ coverImageURL, name, id, category, description}: VocabsDataPro
                             <Box
                                 fontSize="xl"
                                 fontWeight="semibold"
-                                as="h4"
                                 lineHeight="tight"
                             >
                                 <Heading as='h3' size='md' textAlign='center'>{name}</Heading>

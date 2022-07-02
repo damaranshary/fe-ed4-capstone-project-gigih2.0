@@ -31,7 +31,7 @@ const EmbedYoutubeVideo = ({ coverImageURL, name, id, description, author }: Vid
                         alt={`Picture of ${name}`}
                         rounded="lg"
                         maxH='150px'
-                        mt={3}
+                        mt={6}
                     />
                 </Center>
                 <Box p="6">
