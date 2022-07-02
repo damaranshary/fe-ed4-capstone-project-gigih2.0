@@ -1,17 +1,14 @@
-import { Button, Container, Center, Image, Box, IconButton, useBreakpointValue, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Stack } from '@chakra-ui/react';
+import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
-import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Link as ReactRouterLink } from 'react-router-dom'
-import legendsData from '../../../data/legends';
-import axios from 'axios';
 import { BooksDataProps } from '../../../types/types';
 import { BreadcrumbForAdventureBookContent, BreadcrumbForNatureBookContent } from '../../breadcrumb';
 import { useAppSelector } from '../../../redux/hooks';
 import { RootState } from '../../../redux/store';
+import { fetchBookContentFromID } from '../../../api-call/fetchJSONData';
 
 
 const BookContent = () => {
@@ -34,21 +31,13 @@ const BookContent = () => {
     const mergedData = natureBooksData.concat(adventureBooksData);
 
     useEffect(() => {
-        getBookContentFromID();
+        const getBookContentFromID = () => {
+            const filteredContentData = mergedData.filter(content => content.id === bookID);
+            filteredContentData !== undefined ? setContentData(filteredContentData[0]) : fetchBookContentFromID(bookID).then(res => setContentData(res));
+        }
+        mergedData !== undefined && getBookContentFromID();
+        // eslint-disable-next-line 
     }, [])
-
-    const fetchBookContentFromID = async (): Promise<BooksDataProps> => { //will run this if there is no data in redux state
-        const data: any =
-            await axios
-                .get(`/data/${bookID}.json`)
-                .catch(err => console.log(err));
-        return data.data;
-    }
-
-    const getBookContentFromID = () => {
-        const filteredContentData = mergedData.filter(content => content.id === bookID);
-        filteredContentData !== undefined ? setContentData(filteredContentData[0]) : fetchBookContentFromID().then(res => setContentData(res));
-    }
 
     // These are the breakpoints which changes the position of the
     // buttons as the screen size changes
@@ -58,17 +47,17 @@ const BookContent = () => {
     return (
         <>
             <Center>
-                {contentData !== undefined && contentData.category == 'adventure' &&
+                {contentData !== undefined && contentData.category === 'adventure' &&
                     <BreadcrumbForAdventureBookContent
                         currentPage={contentData.name} />}
-                {contentData !== undefined && contentData.category == 'nature' &&
+                {contentData !== undefined && contentData.category === 'nature' &&
                     <BreadcrumbForNatureBookContent
                         currentPage={contentData.name} />}
             </Center>
             <Center mt={8}>
                 <Stack direction='column' >
                     <Center >
-                        <Text fontSize='3xl' as='h4' mb={5}>{contentData?.name}</Text>
+                        <Text fontSize='3xl' as='h2' mb={5}>{contentData?.name}</Text>
                     </Center>
                     <Box
                         position={'relative'}

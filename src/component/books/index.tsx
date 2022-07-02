@@ -13,8 +13,8 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 import { BooksDataProps } from '../../types/types';
 
 const Books = ({ coverImageURL, name, id, category, description, author }: BooksDataProps) => {
-    const categoryWithSlug = category.replaceAll(" ", "-")
-    const linkToDescription = `/read/${categoryWithSlug}/${id}`
+    const categoryWithSlug = category?.replaceAll(" ", "-")
+    const linkToContent = `/read/${categoryWithSlug}/${id}`
     return (
         <Flex p={2} maxW="6xl" alignItems="center" justifyContent="center" mt={8}>
             <Box
@@ -39,7 +39,6 @@ const Books = ({ coverImageURL, name, id, category, description, author }: Books
                             <Box
                                 fontSize="xl"
                                 fontWeight="semibold"
-                                as="h4"
                                 lineHeight="tight"
                             >
                                 <Heading size='md'>{name}</Heading>
@@ -47,7 +46,7 @@ const Books = ({ coverImageURL, name, id, category, description, author }: Books
                                 <Text fontSize='xs' mt={2} noOfLines={[1, 2]}>{description}</Text>
                             </Box>
                             <Center>
-                                <Link as={ReactRouterLink} to={linkToDescription}>
+                                <Link as={ReactRouterLink} to={linkToContent}>
                                     <Button
                                         mt={6}
                                         mb={4}

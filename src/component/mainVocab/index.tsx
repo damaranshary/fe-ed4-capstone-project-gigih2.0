@@ -1,7 +1,6 @@
 import { Container, SimpleGrid, Heading, Link} from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import Vocabs from '../vocabItems';
-import vocabsData from '../../data/vocabOne';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { VocabsDataProps } from "../../types/types";
@@ -12,6 +11,7 @@ const Vocab = () => {
 
     useEffect(() => {
         setVocabsDataToState();
+        // eslint-disable-next-line 
     }, [])
 
     const setVocabsDataToState = async () => {

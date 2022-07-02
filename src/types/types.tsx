@@ -34,3 +34,11 @@ export interface VideoDataProps {
     description: string,
     author: string
 }
+
+export interface BooksComponentProps {
+    booksList: string[]
+}
+
+export interface WatchComponentProps {
+    videosJSONData: string[]
+}
