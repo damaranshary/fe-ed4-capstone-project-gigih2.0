@@ -1,4 +1,4 @@
-import { Center, Image, Text, IconButton, Skeleton, SkeletonText } from '@chakra-ui/react';
+import { Center, Image, Text, IconButton } from '@chakra-ui/react';
 import { useState } from 'react';
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import { BookContainerProps } from '../../../types/types';
