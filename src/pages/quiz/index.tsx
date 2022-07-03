@@ -5,39 +5,39 @@ import "./quiz.css";
 const Quiz = () => {
   const questions = [
     {
-      questionText: "What is the capital of France?",
+      questionText: "Siapa pengarang buku yang berjudul Kepiting untuk Makan Malam?",
       answerOptions: [
-        { answerText: "New York", isCorrect: false },
-        { answerText: "London", isCorrect: false },
-        { answerText: "Paris", isCorrect: true },
-        { answerText: "Dublin", isCorrect: false },
+        { answerText: "Yuniventaria Hasugian", isCorrect: true },
+        { answerText: "Damar Galih Anshary", isCorrect: false },
+        { answerText: "Shalsa Bila Inez Putri", isCorrect: false },
+        { answerText: "Pratiwi Sibarani", isCorrect: false },
       ],
     },
     {
-      questionText: "Who is CEO of Tesla?",
+      questionText: "Pada cerita Cahaya kecil, Apa yang Thida lakukan saat berlibur ke rumah kakeknya di pedesaan ?",
       answerOptions: [
-        { answerText: "Jeff Bezos", isCorrect: false },
-        { answerText: "Elon Musk", isCorrect: true },
-        { answerText: "Bill Gates", isCorrect: false },
-        { answerText: "Tony Stark", isCorrect: false },
+        { answerText: "Bermain Layangan", isCorrect: true },
+        { answerText: "Menonton Tv", isCorrect: false },
+        { answerText: "Memasak", isCorrect: false },
+        { answerText: "Tidur", isCorrect: false },
       ],
     },
     {
-      questionText: "The iPhone was created by which company?",
+      questionText: "Dibawah ini yang termasuk cerita petualangan, kecuali?",
       answerOptions: [
-        { answerText: "Apple", isCorrect: true },
-        { answerText: "Intel", isCorrect: false },
-        { answerText: "Amazon", isCorrect: false },
-        { answerText: "Microsoft", isCorrect: false },
+        { answerText: "Cahaya Kecil", isCorrect: false },
+        { answerText: "Gigitan Siapa", isCorrect: false },
+        { answerText: "Pergi Ke pasar", isCorrect: false },
+        { answerText: "Bulan dan Topi", isCorrect: true },
       ],
     },
     {
-      questionText: "How many Harry Potter books are there?",
+      questionText: "Pada Buku yang Berjudul Ikan Tipis, Ikan apa yang ada di dalam Cerita tersebut?",
       answerOptions: [
-        { answerText: "1", isCorrect: false },
-        { answerText: "4", isCorrect: false },
-        { answerText: "6", isCorrect: false },
-        { answerText: "7", isCorrect: true },
+        { answerText: "Ikan Tongkol", isCorrect: false },
+        { answerText: "Ikan Salmon", isCorrect: false },
+        { answerText: "Ikan Hiu ", isCorrect: false },
+        { answerText: "Ikan Pepija", isCorrect: true },
       ],
     },
   ];
