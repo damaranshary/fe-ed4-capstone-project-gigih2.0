@@ -1,88 +1,84 @@
 {
-    "coverImageURL": "/assets/booksContent-12/cover.jpg",
-    "content": [
-        {
-            "imageURL": "/assets/booksContent-12/p-1.jpg",
-            "description": "Kuleh dan Inai hendak mencari siput dan daun pakis ke hutan. “Inai, aku saja yang membawa anjat,” kata Kuleh kepada ibunya. Inai mengangguk sambil menggendong Adik dengan bening. Seperti biasa, Inai bersenandung untuk meninabobokan Adik."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-2.jpg",
-            "description": "Kuleh ikut bersenandung walau dia belum memahami maksud lagu itu. \n Wahai enggang, burung istimewa \n Besar jasamu bagi kami semua \n Rumahmu di atas pohon tinggi \n Terima kasih sudah datang ke sini"
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-3.jpg",
-            "description": "Ada gambar enggang di mana-mana. Namun, Kuleh belum pernah melihat burung yang asli. Kuleh berharap kali ini bisa melihat enggang di hutan."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-4.jpg",
-            "description": "Wah, banyak tanaman baru tumbuh di sini. Daunnya berbeda dari pohon ulin ini. Berarti tanaman kecil ini bukan anak pohon ulin. Siapa yang menanamnya, ya?"
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-5.jpg",
-            "description": "Tiba-tiba … Kuak! Kuak! “Nah, itu bunyi enggang!”, kata Inai."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-6.jpg",
-            "description": "Wah, enggang? Kuleh segera mencari sumber suara itu. Asalnya dari atas sana, dari dahan pohon yang tinggi."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-7.jpg",
-            "description": "Aduh, ada biji buah jatuh ke kepala Kuleh. Kuleh mendongak. Dia melihat ekor burung menyembul di antara daun. Semoga itu enggang."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-8.jpg",
-            "description": "Karena penasaran, Kuleh memanjat pohon di dekatnya. Bagai macan dahan, Kuleh berpindah dari dahan ke dahan dengan lincah. Nama Kuleh memang berarti macan dahan."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-9.jpg",
-            "description": "Setelah memanjat cukup tinggi, Kuleh dapat melihat burung itu. Betul, itu enggang! Bukan hanya satu enggang, ada paruh-paruh kecil muncul dari lubang. Induk enggang sedang memberi makan anak-anaknya."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-10.jpg",
-            "description": "Kuleh ingin mengamati enggang lebih dekat. Dengan hati-hati dia memanjat makin tinggi. Namun, enggang itu terkejut lalu terbang."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-11.jpg",
-            "description": "Cepat-cepat Kuleh turun dari pohon dan mengejar enggang. Namun, burung itu sudah melesat jauh."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-12.jpg",
-            "description": "Dengan bersemangat Kuleh berseru, “Inai, aku melihat enggang!” Inai tersenyum, “Syukurlah masih ada enggang di hutan ini.”"
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-13.jpg",
-            "description": "Kuleh lalu membantu Inai mengambil siput di pinggir sungai. Tak henti-hentinya Kuleh bercerita tentang enggang tadi."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-14.jpg",
-            "description": "Anjat Kuleh sudah penuh dengan pakis dan siput. Inai mengajak Kuleh pulang walau sebenarnya Kuleh masih ingin mencari enggang."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-15.jpg",
-            "description": "Eh, itu ada tanaman baru lagi! Pasti ini berasal dari biji buah yang dimakan enggang. Wah, enggang telah membantu menyebarkan biji tanaman."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-16.jpg",
-            "description": "Dalam perjalanan pulang Kuleh dan Inai kembali bersenandung. Kuleh sekarang paham arti lagu itu. Enggang memang berjasa."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-17.jpg",
-            "description": "Itulah sebabnya orang-orang Kalimantan memasang gambar enggang di mana-mana. Rupanya enggang memang istimewa Kuleh akan menjaga hutan agar enggang betah tinggal di sana."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-18.jpg",
-            "description": "Wahai enggang, burung istimewa \n Besar jasamu bagi kami semua \n Rumahmu di atas pohon tinggi \n Terima kasih sudah datang ke sini \n Sekarang bagi Kuleh lagu ninabobo itu bukan lagi lagu biasa."
-        },
-        {
-            "imageURL": "/assets/booksContent-12/p-19.jpg",
-            "description": "Mengenal Lebih Dekat \n Ada berbagai jenis enggang di berbagai wilayah di dunia. Cerita Enggang yang Istimewa ini terinspirasi dari cerita rakyat Kalimantan tentang persahabatan manusia dan burung enggang badak yang bernama Latin Buceros rhinoceros. Kisah itu menceritakan peran enggang yang secara tidak langsung menjaga kelestarian hutan. Saat ini tempat tinggal enggang makin terbatas karena deforestasi (penebangan hutan). Bagi masyarakat Kalimantan, enggang dianggap berjasa. Karena itu, kita dapat menjumpai gambar enggang di mana-mana, termasuk dalam lambang Provinsi Kalimantan Utara."
-        }
-    ],
-    "name": "Enggang yang Istimewa",
-    "id": "N006",
-    "category": "nature",
-    "description": "Ada banyak gambar enggang di mana-mana. Namun, Kuleh belum pernah melihat burung yang asli. Saat Kuleh dan Inai perhi ke hutan, dia berharap dapat melihat enggang.",
-    "author": "Pranika Dian Dini",
-    "illustrator": "Matahari Indonesia",
-    "publisher": "The Asia Foundation - Let's Read"
+  "coverImageURL": "/assets/booksContent-12/cover.jpg",
+  "content": [
+    {
+      "imageURL": "/assets/booksContent-12/p-1.jpg",
+      "description": "Kuleh dan Inai hendak mencari siput dan daun pakis ke hutan. “Inai, aku saja yang membawa anjat,” kata Kuleh kepada ibunya. Inai mengangguk sambil menggendong Adik dengan bening. Seperti biasa, Inai bersenandung untuk meninabobokan Adik."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-2.jpg",
+      "description": "Kuleh ikut bersenandung walau dia belum memahami maksud lagu itu. \n Wahai enggang, burung istimewa \n Besar jasamu bagi kami semua \n Rumahmu di atas pohon tinggi \n Terima kasih sudah datang ke sini"
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-3.jpg",
+      "description": "Ada gambar enggang di mana-mana. Namun, Kuleh belum pernah melihat burung yang asli. Kuleh berharap kali ini bisa melihat enggang di hutan."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-4.jpg",
+      "description": "Wah, banyak tanaman baru tumbuh di sini. Daunnya berbeda dari pohon ulin ini. Berarti tanaman kecil ini bukan anak pohon ulin. Siapa yang menanamnya, ya?"
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-5.jpg",
+      "description": "Tiba-tiba … Kuak! Kuak! “Nah, itu bunyi enggang!”, kata Inai."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-6.jpg",
+      "description": "Wah, enggang? Kuleh segera mencari sumber suara itu. Asalnya dari atas sana, dari dahan pohon yang tinggi."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-7.jpg",
+      "description": "Aduh, ada biji buah jatuh ke kepala Kuleh. Kuleh mendongak. Dia melihat ekor burung menyembul di antara daun. Semoga itu enggang."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-8.jpg",
+      "description": "Karena penasaran, Kuleh memanjat pohon di dekatnya. Bagai macan dahan, Kuleh berpindah dari dahan ke dahan dengan lincah. Nama Kuleh memang berarti macan dahan."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-9.jpg",
+      "description": "Setelah memanjat cukup tinggi, Kuleh dapat melihat burung itu. Betul, itu enggang! Bukan hanya satu enggang, ada paruh-paruh kecil muncul dari lubang. Induk enggang sedang memberi makan anak-anaknya."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-10.jpg",
+      "description": "Kuleh ingin mengamati enggang lebih dekat. Dengan hati-hati dia memanjat makin tinggi. Namun, enggang itu terkejut lalu terbang."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-11.jpg",
+      "description": "Cepat-cepat Kuleh turun dari pohon dan mengejar enggang. Namun, burung itu sudah melesat jauh."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-12.jpg",
+      "description": "Dengan bersemangat Kuleh berseru, “Inai, aku melihat enggang!” Inai tersenyum, “Syukurlah masih ada enggang di hutan ini.”"
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-13.jpg",
+      "description": "Kuleh lalu membantu Inai mengambil siput di pinggir sungai. Tak henti-hentinya Kuleh bercerita tentang enggang tadi."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-14.jpg",
+      "description": "Anjat Kuleh sudah penuh dengan pakis dan siput. Inai mengajak Kuleh pulang walau sebenarnya Kuleh masih ingin mencari enggang."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-15.jpg",
+      "description": "Eh, itu ada tanaman baru lagi! Pasti ini berasal dari biji buah yang dimakan enggang. Wah, enggang telah membantu menyebarkan biji tanaman."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-16.jpg",
+      "description": "Dalam perjalanan pulang Kuleh dan Inai kembali bersenandung. Kuleh sekarang paham arti lagu itu. Enggang memang berjasa."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-17.jpg",
+      "description": "Itulah sebabnya orang-orang Kalimantan memasang gambar enggang di mana-mana. Rupanya enggang memang istimewa Kuleh akan menjaga hutan agar enggang betah tinggal di sana."
+    },
+    {
+      "imageURL": "/assets/booksContent-12/p-18.jpg",
+      "description": "Wahai enggang, burung istimewa \n Besar jasamu bagi kami semua \n Rumahmu di atas pohon tinggi \n Terima kasih sudah datang ke sini \n Sekarang bagi Kuleh lagu ninabobo itu bukan lagi lagu biasa."
+    }
+  ],
+  "name": "Enggang yang Istimewa",
+  "id": "N006",
+  "category": "nature",
+  "description": "Ada banyak gambar enggang di mana-mana. Namun, Kuleh belum pernah melihat burung yang asli. Saat Kuleh dan Inai perhi ke hutan, dia berharap dapat melihat enggang.",
+  "author": "Pranika Dian Dini",
+  "illustrator": "Matahari Indonesia",
+  "publisher": "The Asia Foundation - Let's Read"
 }
