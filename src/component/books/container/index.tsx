@@ -11,7 +11,7 @@ const BookContainer = ({ content, title }: BookContainerProps) => {
                 <Image src={content[currentPage].imageURL} rounded='xl' w='600px' h='400px' alt={title + ' ' + currentPage.toString()} />
             </Center>
             <Center>
-                <Text maxW='6xl' mt={[6, 8, 10]}>{content[currentPage].description}</Text>
+                <Text maxW='3xl' mt={[6, 8, 10]}>{content[currentPage].description}</Text>
             </Center>
 
             <Center mt={6}>
