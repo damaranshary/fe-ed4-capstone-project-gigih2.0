@@ -30,7 +30,7 @@ const Vocab = () => {
     const fetcher = vocabsDaily.map(vocab => fetchVocabsData(vocab))
 
     return (
-        <Container maxW='6xl' minH='85vh' centerContent>
+        <Container maxW='6xl' minH='85vh' centerContent data-testid="main-vocab">
             <Heading mt={4}>Vocabulary</Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="1">
                 {vocabsData !== undefined && vocabsData.map((item) =>

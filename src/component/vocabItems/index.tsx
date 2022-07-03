@@ -13,7 +13,7 @@ import { VocabsDataProps } from '../../types/types';
 const Vocabs = ({ coverImageURL, name, id, category, description }: VocabsDataProps) => {
     const linkToDescription = `/learn/${category}/${id}`
     return (
-        <Flex p={2} maxW="6xl" alignItems="center" justifyContent="center" mt={8}>
+        <Flex p={2} maxW="6xl" alignItems="center" justifyContent="center" mt={8} data-testid="vocabs">
             <Box
                 maxW="xl"
                 borderWidth="1px"
