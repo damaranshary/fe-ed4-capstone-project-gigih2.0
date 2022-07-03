@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "../../component/heroSection/HeroSection";
-import { homeObjOne, homeObjThree, homeObjTwo } from "./Data";
+import { homeObjFive, homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from "./Data";
 import { Box, IconButton, useBreakpointValue, Stack, Heading, Text, Container } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
@@ -32,9 +32,9 @@ export default function Home() {
       image: "images/kepiting.jpg",
     },
     {
-      title: "Enggang yang istimewa",
-      text: "Cerita Enggang yang Istimewa ini terinspirasi dari cerita rakyat Kalimantan tentang persahabatan manusia dan burung enggang badak yang bernama Latin Buceros rhinoceros. Kisah itu menceritakan peran enggang yang secara tidak langsung menjaga kelestarian hutan.",
-      image: "images/enggang.jpg",
+      title: "Suara Air",
+      text: "Suara itu terdengar lebih pelan sekarang. KECIPAK BYUR AUM. Varsha berjingkat ke jendela dan mengintip ke luar. Taman tampak lengang. KECIPAK BYUR AUM.",
+      image: "images/suara-air.jpg",
     },
     {
       title: "Cahaya Bulan diatas Laut",
@@ -62,7 +62,7 @@ export default function Home() {
             <Box key={index} height={"6xl"} position="relative" backgroundPosition="center" backgroundRepeat="no-repeat" backgroundSize="cover" backgroundImage={`url(${card.image})`}>
               <Container size="container.lg" height="800px" width={"full"} position="relative">
                 <Stack spacing={4} w={"full"} maxW={"lg"} position="absolute" top="50%" transform="translate(0, -50%)">
-                  <Heading color="black" fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+                  <Heading color="LightYellow" fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
                     {card.title}
                   </Heading>
                   <Text fontSize={{ base: "md", lg: "lg" }} color="ghostwhite">
@@ -80,6 +80,8 @@ export default function Home() {
       <HeroSection {...homeObjOne} />
       <HeroSection {...homeObjTwo} />
       <HeroSection {...homeObjThree} />
+      <HeroSection {...homeObjFour} />
+      <HeroSection {...homeObjFive} />
     </>
   );
 }

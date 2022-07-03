@@ -1,6 +1,6 @@
 .home__hero-section {
   color: #fff;
-  padding: 120px 0;
+  padding: 160px 0;
 }
 
 .home__hero-row {
@@ -58,10 +58,11 @@
 }
 
 .home__hero-subtitle {
-  max-width: 440px;
+  max-width: 600px;
   margin-bottom: 35px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 30px;
+  word-spacing: 2px;
 }
 
 .home__hero-img-wrapper {
