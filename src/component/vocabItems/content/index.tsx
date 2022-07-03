@@ -1,13 +1,12 @@
 import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack, Container } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Slider from 'react-slick'
-// Here we have used react-icons package for the icons
-import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from 'react-icons/ai'
+import Slider from 'react-slick';
+import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from 'react-icons/ai';
 import axios from 'axios';
 import { VocabsDataProps } from '../../../types/types';
 import { BreadcrumbForVocabContent } from '../../breadcrumb';
-import { Wrap, WrapItem } from '@chakra-ui/react'
+import { Wrap, WrapItem } from '@chakra-ui/react';
 
 
 const VocabContent = () => {
@@ -46,7 +45,7 @@ const VocabContent = () => {
     const side = useBreakpointValue({ base: '30%', md: '10px' });
 
     return (
-        <Container minH='90vh' maxW='100vh' mb={10}>
+        <Container minH='90vh' maxW='100vh' mb={10} data-testid="vocab-content">
             <Center>
                 {data !== undefined && data.category === 'vocabs' &&
                     <BreadcrumbForVocabContent
@@ -91,7 +90,7 @@ const VocabContent = () => {
                             <AiOutlineDoubleLeft />
                         </IconButton>
                         {/* Right Icon */}
-                        <IconButton
+                        <IconButton data-testid="button-slider"
                             aria-label="right-arrow"
                             colorScheme="teal"
                             borderRadius="full"
@@ -113,7 +112,6 @@ const VocabContent = () => {
                                         </Center>
                                     </WrapItem>
                                 </Wrap>
-
                             ))}
                         </Slider>
                     </Box>

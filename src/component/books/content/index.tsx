@@ -1,7 +1,7 @@
 import { Center, Image, Box, IconButton, useBreakpointValue, Text, Stack, Container, Heading, Flex } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Slider from 'react-slick'
+import Slider from 'react-slick';
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import { BooksDataProps } from '../../../types/types';
