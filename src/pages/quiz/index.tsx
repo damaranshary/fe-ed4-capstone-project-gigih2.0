@@ -48,7 +48,7 @@ const Quiz = () => {
 
   const handleAnswerOptionClick = (isCorrect: boolean) => {
     if (isCorrect) {
-      setScore(score + 1);
+      setScore(score + 25) ;
     }
 
     const nextQuestion = currentQuestion + 1;
@@ -63,7 +63,7 @@ const Quiz = () => {
       <div className="app">
         {showScore ? (
           <div className="score-section">
-            You scored {score} out of {questions.length}
+            Nilai kamu adalah {score} dari {questions.length * 25}
           </div>
         ) : (
           <>
@@ -74,8 +74,8 @@ const Quiz = () => {
               <div className="question-text">{questions[currentQuestion].questionText}</div>
             </div>
             <div className="answer-section">
-              {questions[currentQuestion].answerOptions.map((answerOption) => (
-                <button className="btn" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>
+              {questions[currentQuestion].answerOptions.map((answerOption, index) => (
+                <button type='button' className="btn" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)} key={index}>
                   {answerOption.answerText}
                 </button>
               ))}
