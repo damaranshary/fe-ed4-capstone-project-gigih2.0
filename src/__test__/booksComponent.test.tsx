@@ -2,7 +2,7 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import BooksComponent from "../component/books";
 import userEvent from "@testing-library/user-event";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { testBooksData } from './data/testBooksData';
 import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
@@ -40,7 +40,7 @@ test('loads and displays Books Component', async () => {
             </BrowserRouter>
         </ChakraProvider>)
 
-    await waitFor(() => screen.getByRole('img'))
+    await screen.findByRole('img')
 
     const heading = screen.getByRole('heading');
     const buttonToRead = screen.getByRole('link');

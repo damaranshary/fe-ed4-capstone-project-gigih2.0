@@ -31,6 +31,11 @@ const VocabContent = () => {
         // eslint-disable-next-line
     }, [])
 
+    useEffect(() => {
+        data !== undefined && (document.title = data?.name + ' - Learn Baca Merdeka')
+        // eslint-disable-next-line 
+    }, [data])
+
     const getVocabContentFromID = async (): Promise<VocabsDataProps> => {
         const data: any =
             await axios

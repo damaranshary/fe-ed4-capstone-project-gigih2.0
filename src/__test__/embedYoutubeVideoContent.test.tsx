@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import EmbedYoutubeVideoContent from "../component/watch/embedYTVideo/content"
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { testVideosData } from './data/testVideosData';
 import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
@@ -34,7 +34,7 @@ test('loads and displays embedYoutube Vid Component', async () => {
       </Provider>
     </ChakraProvider >)
 
-  await waitFor(() => screen.getByRole('heading'))
+  await screen.findByRole('heading')
 
   const heading = screen.getByRole('heading');
   const textForAuthor = screen.getByText(/Karya/i);

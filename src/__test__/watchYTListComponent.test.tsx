@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import EmbedYoutubeVideo from "../component/watch/embedYTVideo";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { testVideosData } from './data/testVideosData';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -43,7 +43,7 @@ test('loads and displays Youtube Video List Component', async () => {
       </Provider>
     </ChakraProvider >)
 
-  await waitFor(() => screen.getByRole('img'))
+  await screen.findByRole('img')
 
   const heading = screen.getByRole('heading');
   const buttonToWatch = screen.getByRole('link');

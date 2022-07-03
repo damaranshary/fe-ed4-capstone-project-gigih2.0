@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Center, Container } from "@chakra-ui/react";
 import AdventureBooksComponent from "../../../component/adventure";
 import { BreadcrumbForAdventurePage } from "../../../component/breadcrumb";
@@ -6,6 +7,12 @@ import { RootState } from "../../../redux/store";
 
 const Adventure = () => {
     const adventureBooksJSONData = useAppSelector((state : RootState) => state.adventureBooks.jsonData.json );
+
+    useEffect(() => {
+        document.title = 'Read Adventure - Baca Merdeka'
+        // eslint-disable-next-line 
+    }, [])
+
     return (
         <Container minH='90vh' maxW='6xl' mb={10}>
             <Center>

@@ -40,6 +40,11 @@ const BookContent = () => {
         // eslint-disable-next-line 
     }, [bookID])
 
+    useEffect(() => {
+        contentData !== undefined && (document.title = contentData?.name + ' - Read Baca Merdeka')
+        // eslint-disable-next-line 
+    }, [contentData, bookID])
+
     return (
         <Container minH='90vh' maxW='6xl' mb={10}>
             {contentData !== undefined &&

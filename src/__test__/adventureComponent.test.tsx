@@ -1,8 +1,7 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import AdventureComponent from "../component/adventure";
-import userEvent from "@testing-library/user-event";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { testBooksData } from './data/testBooksData';
 import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
@@ -37,7 +36,7 @@ test('loads and displays adventures Component', async () => {
       </Provider>
     </ChakraProvider>)
 
-  await waitFor(() => screen.getByRole('heading'))
+  await screen.findByRole('heading')
 
   const heading = screen.getByRole('heading');
 

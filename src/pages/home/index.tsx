@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroSection from "../../component/heroSection/HeroSection";
 import { homeObjFive, homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from "./Data";
 import { Box, IconButton, useBreakpointValue, Stack, Heading, Text, Container } from "@chakra-ui/react";
@@ -24,6 +24,10 @@ export default function Home() {
 
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
+
+  useEffect(() => {
+    document.title = 'Home - Baca Merdeka'
+  }, [])
 
   const cards = [
     {

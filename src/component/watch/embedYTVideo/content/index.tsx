@@ -22,6 +22,11 @@ const EmbedYoutubeVideoContent = () => {
         // eslint-disable-next-line 
     }, [videoID])
 
+    useEffect(() => {
+        videoContentData !== undefined && (document.title = videoContentData?.name + ' - Watch Baca Merdeka')
+        // eslint-disable-next-line 
+    }, [videoContentData, videoID])
+
     return (
         <Container minH='90vh' maxW='6xl' mb={10}>
             {videoContentData !== undefined &&

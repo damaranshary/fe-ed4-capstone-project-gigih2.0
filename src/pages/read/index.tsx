@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Center, Button, Heading } from '@chakra-ui/react';
 import { BreadcrumbForReadPage } from '../../component/breadcrumb';
 import NatureBooksComponent from '../../component/nature';
@@ -11,6 +12,11 @@ const Read = () => {
     const natureBooksWithSlice = natureBooks.slice(0, 3);
     const adventureBooks = useAppSelector((state: RootState) => state.adventureBooks.jsonData.json)
     const adventureBooksWithSlice = adventureBooks.slice(0, 3);
+
+    useEffect(() => {
+        document.title = 'Read - Baca Merdeka'
+        // eslint-disable-next-line 
+    }, [])
 
     return (
         <>

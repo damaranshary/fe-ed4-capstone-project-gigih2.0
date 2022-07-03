@@ -1,5 +1,5 @@
 import { Container } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./quiz.css";
 
 const Quiz = () => {
@@ -58,6 +58,11 @@ const Quiz = () => {
       setShowScore(true);
     }
   };
+
+  useEffect(() => {
+    document.title = 'Quiz - Baca Merdeka'
+  }, [])
+
   return (
     <Container minH='85vh' maxW='100vh' mt={24} centerContent>
       <div className="app">

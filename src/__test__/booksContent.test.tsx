@@ -2,7 +2,7 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import BookContainer from "../component/books/container"
 import userEvent from "@testing-library/user-event";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { testBooksData } from './data/testBooksData';
 import { ChakraProvider } from '@chakra-ui/react';
 
@@ -31,7 +31,7 @@ test('loads and displays Book content container', async () => {
             />
         </ChakraProvider>)
 
-    await waitFor(() => screen.getByRole('img'));
+    await screen.findByRole('img');
 
     const textForDescriptionPerPages = screen.getByText(testBooksData.content[0].description);
     const buttonPrevAndNextPage = screen.getByRole('button');
