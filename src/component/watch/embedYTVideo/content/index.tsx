@@ -29,7 +29,9 @@ const EmbedYoutubeVideoContent = () => {
                     <BreadcrumbForWatchContent currentPage={videoContentData.name} />
                 </Center>
             }
-            <Heading as={Center} mt={4} mb={1}>{videoContentData?.name}</Heading>
+            <Center>
+                <Heading mt={4} mb={1}>{videoContentData?.name}</Heading>
+            </Center>
             <Center>
                 <Text color='gray.600'>Karya {videoContentData?.author}</Text>
             </Center>
