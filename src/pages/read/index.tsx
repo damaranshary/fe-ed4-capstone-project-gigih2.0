@@ -47,7 +47,7 @@ const Read = () => {
                 </Button>
             </Center>
             <NatureBooksComponent booksList={natureBooksWithSlice} />
-            <Center>
+            <Center mb={10}>
                 <Button
                     as={ReactRouterLink}
                     mt={6}

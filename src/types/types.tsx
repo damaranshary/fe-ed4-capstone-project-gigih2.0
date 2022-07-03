@@ -42,3 +42,11 @@ export interface BooksComponentProps {
 export interface WatchComponentProps {
     videosJSONData: string[]
 }
+
+export interface BookContainerProps {
+    content: {
+        imageURL: string,
+        description: string
+    }[],
+    title: string
+}

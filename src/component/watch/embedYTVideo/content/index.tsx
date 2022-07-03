@@ -1,5 +1,5 @@
 import { VideoDataProps } from "../../../../types/types";
-import { Center, Container, Heading } from "@chakra-ui/react";
+import { Center, Container, Heading, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../../../../redux/hooks";
@@ -12,14 +12,14 @@ const EmbedYoutubeVideoContent = () => {
     const [videoContentData, setVideoContentData] = useState<VideoDataProps>();
     const params = useParams();
     const videoID = params?.id;
-    
+
     useEffect(() => {
         const getVideoContentFromID = () => {
             const filteredVideoContentData = videosData.filter(content => content.id === videoID);
             filteredVideoContentData.length !== 0 ? setVideoContentData(filteredVideoContentData[0]) : fetchVideoContentFromID(videoID).then(res => setVideoContentData(res));
         }
         videoID !== undefined && getVideoContentFromID();
-    // eslint-disable-next-line 
+        // eslint-disable-next-line 
     }, [videoID])
 
     return (
@@ -29,7 +29,10 @@ const EmbedYoutubeVideoContent = () => {
                     <BreadcrumbForWatchContent currentPage={videoContentData.name} />
                 </Center>
             }
-            <Heading as={Center} mt={4}>{videoContentData?.name}</Heading>
+            <Heading as={Center} mt={4} mb={1}>{videoContentData?.name}</Heading>
+            <Center>
+                <Text color='gray.600'>Karya {videoContentData?.author}</Text>
+            </Center>
             <Center mt={10}>
                 <iframe
                     width="1280px"
