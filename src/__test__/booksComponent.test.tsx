@@ -3,10 +3,9 @@ import { setupServer } from 'msw/node';
 import BooksComponent from "../component/books";
 import userEvent from "@testing-library/user-event";
 import { render, screen, waitFor } from "@testing-library/react";
-import testBooksData from '../data/testBooksData';
+import { testBooksData } from './data/testBooksData';
 import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
-
 
 const server = setupServer(
     rest.get('/data/book/:id', (req, res, ctx) => {
@@ -63,7 +62,7 @@ test('handles server error', async () => {
     server.use(
         // override the initial "GET /greeting" request handler
         // to return a 500 Server Error
-        rest.get('/greeting', (req, res, ctx) => {
+        rest.get('/data/book/:id', (req, res, ctx) => {
             return res(ctx.status(500))
         }),
     )
