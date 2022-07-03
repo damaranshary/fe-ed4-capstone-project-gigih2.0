@@ -4,14 +4,13 @@ import {
     Image,
     Button,
     Center,
-    Link,
     Heading,
     Text
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { VocabsDataProps } from '../../types/types';
 
-const Vocabs = ({ coverImageURL, name, id, category, description}: VocabsDataProps) => {
+const Vocabs = ({ coverImageURL, name, id, category, description }: VocabsDataProps) => {
     const linkToDescription = `/learn/${category}/${id}`
     return (
         <Flex p={2} maxW="6xl" alignItems="center" justifyContent="center" mt={8}>
@@ -41,9 +40,12 @@ const Vocabs = ({ coverImageURL, name, id, category, description}: VocabsDataPro
                                 <Heading as='h3' size='md' textAlign='center'>{name}</Heading>
                                 <Text fontSize='xs' textAlign='center' mt={2}>{description}</Text>
                             </Box>
-                            <Link as={ReactRouterLink} to={linkToDescription}>
+                            <Center>
                                 <Button
-                                    mt="4"
+                                    as={ReactRouterLink}
+                                    to={linkToDescription}
+                                    mt={6}
+                                    mb={4}
                                     flex={1}
                                     fontSize={'sm'}
                                     rounded={'full'}
@@ -62,7 +64,7 @@ const Vocabs = ({ coverImageURL, name, id, category, description}: VocabsDataPro
                                     }}>
                                     Learn
                                 </Button>
-                            </Link>
+                            </Center>
                         </Flex>
                     </Center>
                 </Box>

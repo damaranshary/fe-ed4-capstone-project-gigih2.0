@@ -4,7 +4,6 @@ import {
     Image,
     Button,
     Center,
-    Link,
     Heading,
     Text
 } from '@chakra-ui/react';
@@ -45,34 +44,32 @@ const Books = ({ coverImageURL, name, id, description, author }: BooksDataProps)
                                 <Text fontSize='xs' mt={2} noOfLines={[1, 2]}>{description}</Text>
                             </Box>
                             <Center>
-                                <Link as={ReactRouterLink} to={linkToContent}>
-                                    <Button
-                                        mt={6}
-                                        mb={4}
-                                        flex={1}
-                                        fontSize={'sm'}
-                                        rounded={'full'}
-                                        bg={'blue.400'}
-                                        color={'white'}
-                                        size='lg'
-                                        w='300px'
-                                        boxShadow={
-                                            '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-                                        }
-                                        _hover={{
-                                            bg: 'blue.500',
-                                        }}
-                                        _focus={{
-                                            bg: 'blue.500',
-                                        }}>
-                                        Baca
-                                    </Button>
-                                </Link>
+                                <Button
+                                    as={ReactRouterLink}
+                                    to={linkToContent}
+                                    mt={6}
+                                    mb={4}
+                                    flex={1}
+                                    fontSize={'sm'}
+                                    rounded={'full'}
+                                    bg={'blue.400'}
+                                    color={'white'}
+                                    size='lg'
+                                    w='300px'
+                                    boxShadow={
+                                        '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+                                    }
+                                    _hover={{
+                                        bg: 'blue.500',
+                                    }}
+                                    _focus={{
+                                        bg: 'blue.500',
+                                    }}>
+                                    Baca
+                                </Button>
                             </Center>
-
                         </Flex>
                     </Center>
-
                 </Box>
             </Box>
         </Flex>

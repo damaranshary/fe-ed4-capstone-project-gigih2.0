@@ -1,4 +1,4 @@
-import { Center, Link, Button, Heading } from '@chakra-ui/react';
+import { Center, Button, Heading } from '@chakra-ui/react';
 import { BreadcrumbForReadPage } from '../../component/breadcrumb';
 import NatureBooksComponent from '../../component/nature';
 import AdventureBooksComponent from '../../component/adventure'
@@ -24,49 +24,50 @@ const Read = () => {
             </Center>
             <AdventureBooksComponent booksList={adventureBooksWithSlice} />
             <Center>
-                <Link as={ReactRouterLink} to='adventure'>
-                    <Button mt={6}
-                        mb={8}
-                        flex={1}
-                        fontSize={'sm'}
-                        rounded={'xl'}
-                        bg={'gray.600'}
-                        color={'white'}
-                        size='lg'
-                        w='180px'
-                        variant='outline'
-
-                        _hover={{
-                            bg: 'blue.500',
-                        }}
-                        _focus={{
-                            bg: 'blue.500',
-                        }}>
-                        Lihat Semua
-                    </Button>
-                </Link>
+                <Button
+                    as={ReactRouterLink}
+                    mt={6}
+                    mb={8}
+                    flex={1}
+                    fontSize={'sm'}
+                    rounded={'xl'}
+                    bg={'gray.600'}
+                    color={'white'}
+                    size='lg'
+                    maxW='180px'
+                    variant='outline'
+                    to='adventure'
+                    _hover={{
+                        bg: 'blue.500',
+                    }}
+                    _focus={{
+                        bg: 'blue.500',
+                    }}>
+                    Lihat Semua
+                </Button>
             </Center>
             <NatureBooksComponent booksList={natureBooksWithSlice} />
             <Center>
-                <Link as={ReactRouterLink} to='nature'>
-                    <Button mt={6}
-                        mb={4}
-                        flex={1}
-                        fontSize={'sm'}
-                        rounded={'xl'}
-                        bg={'gray.600'}
-                        color={'white'}
-                        size='lg'
-                        w='180px'
-                        _hover={{
-                            bg: 'blue.500',
-                        }}
-                        _focus={{
-                            bg: 'blue.500',
-                        }}>
-                        Lihat semua
-                    </Button>
-                </Link>
+                <Button
+                    as={ReactRouterLink}
+                    mt={6}
+                    mb={4}
+                    flex={1}
+                    fontSize={'sm'}
+                    rounded={'xl'}
+                    bg={'gray.600'}
+                    color={'white'}
+                    size='lg'
+                    maxW='180px'
+                    to="nature"
+                    _hover={{
+                        bg: 'blue.500',
+                    }}
+                    _focus={{
+                        bg: 'blue.500',
+                    }}>
+                    Lihat semua
+                </Button>
             </Center>
         </>
 

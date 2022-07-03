@@ -4,7 +4,6 @@ import {
     Image,
     Button,
     Center,
-    Link,
     Heading,
     Text,
     Grid,
@@ -53,32 +52,31 @@ const EmbedYoutubeVideo = ({ coverImageURL, name, id, description, author }: Vid
                             </GridItem>
                             <GridItem>
                                 <Center>
-                                    <Link as={ReactRouterLink} to={linkToContent}>
-                                        <Button
-                                            mt={6}
-                                            mb={4}
-                                            flex={1}
-                                            fontSize={'sm'}
-                                            rounded={'full'}
-                                            bg={'red.400'}
-                                            color={'white'}
-                                            size='lg'
-                                            w='200px'
-                                            boxShadow={
-                                                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-                                            }
-                                            _hover={{
-                                                bg: 'red.500',
-                                            }}
-                                            _focus={{
-                                                bg: 'red.500',
-                                            }}>
-                                            Tonton
-                                        </Button>
-                                    </Link>
+                                    <Button
+                                        as={ReactRouterLink}
+                                        to={linkToContent}
+                                        mt={6}
+                                        mb={4}
+                                        flex={1}
+                                        fontSize={'sm'}
+                                        rounded={'full'}
+                                        bg={'red.400'}
+                                        color={'white'}
+                                        size='lg'
+                                        w='200px'
+                                        boxShadow={
+                                            '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+                                        }
+                                        _hover={{
+                                            bg: 'red.500',
+                                        }}
+                                        _focus={{
+                                            bg: 'red.500',
+                                        }}>
+                                        Tonton
+                                    </Button>
                                 </Center>
                             </GridItem>
-
                         </Grid>
                     </Center>
 

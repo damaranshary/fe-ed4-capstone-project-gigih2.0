@@ -1,5 +1,5 @@
 import { VideoDataProps } from "../../../../types/types";
-import { Center, Container } from "@chakra-ui/react";
+import { Center, Container, Heading } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../../../../redux/hooks";
@@ -29,11 +29,12 @@ const EmbedYoutubeVideoContent = () => {
                     <BreadcrumbForWatchContent currentPage={videoContentData.name} />
                 </Center>
             }
+            <Heading as={Center} mt={4}>{videoContentData?.name}</Heading>
             <Center mt={10}>
                 <iframe
                     width="1280px"
                     height="720px"
-                    title='naruto'
+                    title={videoContentData?.name}
                     src={videoContentData?.embedVideoURL}
                     allowFullScreen
                 />
