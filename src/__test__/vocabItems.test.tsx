@@ -1,16 +1,16 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import {render, screen} from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import Vocab from "../../component/mainVocab";
+import VocabItems from "../component/vocabItems";
 
 
 test('Should appear', () => {
     render(
         <ChakraProvider>
             <BrowserRouter>
-                <Vocab/>
+                <VocabItems coverImageURL={""} content={[]} name={""} id={""} category={""} description={""}/>
             </BrowserRouter>
         </ChakraProvider>
     );
-    expect(screen.getByTestId("main-vocab")).toBeInTheDocument()
+    expect(screen.getByTestId("vocabs")).toBeInTheDocument()
 })
