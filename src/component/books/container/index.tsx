@@ -8,10 +8,10 @@ const BookContainer = ({ content, title }: BookContainerProps) => {
     return (
         <>
             <Center>
-                <Image src={content[currentPage].imageURL} rounded='xl' w={['80%', '100%']} h={['80%', '100%']} alt={title + ' ' + currentPage.toString()} />
+                <Image src={content[currentPage].imageURL} rounded='xl' w='600px' h='400px' alt={title + ' ' + currentPage.toString()} />
             </Center>
             <Center>
-                <Text w='100%' mt={6}>{content[currentPage].description}</Text>
+                <Text maxW='6xl' mt={[6, 8, 10]}>{content[currentPage].description}</Text>
             </Center>
 
             <Center mt={6}>
